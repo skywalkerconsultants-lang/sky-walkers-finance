@@ -13,6 +13,7 @@ import { Route as VatRouteImport } from './routes/vat'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as ManagementReportingRouteImport } from './routes/management-reporting'
 import { Route as IndustriesRouteImport } from './routes/industries'
 import { Route as CorporateTaxRouteImport } from './routes/corporate-tax'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -39,6 +40,11 @@ const ServicesRoute = ServicesRouteImport.update({
 const ResourcesRoute = ResourcesRouteImport.update({
   id: '/resources',
   path: '/resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ManagementReportingRoute = ManagementReportingRouteImport.update({
+  id: '/management-reporting',
+  path: '/management-reporting',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndustriesRoute = IndustriesRouteImport.update({
@@ -85,6 +91,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/corporate-tax': typeof CorporateTaxRoute
   '/industries': typeof IndustriesRoute
+  '/management-reporting': typeof ManagementReportingRoute
   '/resources': typeof ResourcesRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -98,6 +105,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/corporate-tax': typeof CorporateTaxRoute
   '/industries': typeof IndustriesRoute
+  '/management-reporting': typeof ManagementReportingRoute
   '/resources': typeof ResourcesRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -112,6 +120,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/corporate-tax': typeof CorporateTaxRoute
   '/industries': typeof IndustriesRoute
+  '/management-reporting': typeof ManagementReportingRoute
   '/resources': typeof ResourcesRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -127,6 +136,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/corporate-tax'
     | '/industries'
+    | '/management-reporting'
     | '/resources'
     | '/services'
     | '/sitemap.xml'
@@ -140,6 +150,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/corporate-tax'
     | '/industries'
+    | '/management-reporting'
     | '/resources'
     | '/services'
     | '/sitemap.xml'
@@ -153,6 +164,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/corporate-tax'
     | '/industries'
+    | '/management-reporting'
     | '/resources'
     | '/services'
     | '/sitemap.xml'
@@ -167,6 +179,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   CorporateTaxRoute: typeof CorporateTaxRoute
   IndustriesRoute: typeof IndustriesRoute
+  ManagementReportingRoute: typeof ManagementReportingRoute
   ResourcesRoute: typeof ResourcesRoute
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -201,6 +214,13 @@ declare module '@tanstack/react-router' {
       path: '/resources'
       fullPath: '/resources'
       preLoaderRoute: typeof ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/management-reporting': {
+      id: '/management-reporting'
+      path: '/management-reporting'
+      fullPath: '/management-reporting'
+      preLoaderRoute: typeof ManagementReportingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/industries': {
@@ -263,6 +283,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   CorporateTaxRoute: CorporateTaxRoute,
   IndustriesRoute: IndustriesRoute,
+  ManagementReportingRoute: ManagementReportingRoute,
   ResourcesRoute: ResourcesRoute,
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
