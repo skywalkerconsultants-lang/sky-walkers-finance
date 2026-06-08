@@ -10,16 +10,20 @@ export function SiteFooter() {
             SKY <span className="text-primary">WALKERS</span>
           </div>
           <p className="mt-4 max-w-md text-sm text-white/60 leading-relaxed">
-            Modern, affordable accounting, VAT, corporate tax and business setup services
-            for UAE startups, SMEs and free zone companies.
+            Smart accounting, tax and financial reporting solutions for UAE SMEs, startups, free zone
+            companies and CPA firms. Supported by a qualified global accounting team — CMAs, Chartered
+            Accountants, ACCA professionals and experienced accountants — delivering reliable solutions
+            across multiple jurisdictions.
           </p>
         </div>
         <div>
-          <div className="font-display font-semibold text-white mb-4">Company</div>
+          <div className="font-display font-semibold text-white mb-4">Services</div>
           <ul className="space-y-2 text-sm">
-            <li><Link to="/about" className="hover:text-primary">About Us</Link></li>
-            <li><Link to="/services" className="hover:text-primary">Services</Link></li>
-            <li><Link to="/industries" className="hover:text-primary">Industries</Link></li>
+            <li><Link to="/accounting" className="hover:text-primary">Accounting</Link></li>
+            <li><Link to="/book-cleanup" className="hover:text-primary">Book Cleanup</Link></li>
+            <li><Link to="/vat" className="hover:text-primary">VAT Filing</Link></li>
+            <li><Link to="/corporate-tax" className="hover:text-primary">Corporate Tax</Link></li>
+            <li><Link to="/management-reporting" className="hover:text-primary">Management Reporting</Link></li>
             <li><Link to="/resources" className="hover:text-primary">Resources</Link></li>
           </ul>
         </div>
