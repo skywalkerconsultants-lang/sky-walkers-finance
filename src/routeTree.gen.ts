@@ -14,6 +14,7 @@ import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as IndustriesRouteImport } from './routes/industries'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as BookCleanupRouteImport } from './routes/book-cleanup'
 import { Route as AccountingRouteImport } from './routes/accounting'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -43,6 +44,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BookCleanupRoute = BookCleanupRouteImport.update({
+  id: '/book-cleanup',
+  path: '/book-cleanup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AccountingRoute = AccountingRouteImport.update({
   id: '/accounting',
   path: '/accounting',
@@ -63,6 +69,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/accounting': typeof AccountingRoute
+  '/book-cleanup': typeof BookCleanupRoute
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
   '/resources': typeof ResourcesRoute
@@ -73,6 +80,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/accounting': typeof AccountingRoute
+  '/book-cleanup': typeof BookCleanupRoute
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
   '/resources': typeof ResourcesRoute
@@ -84,6 +92,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/accounting': typeof AccountingRoute
+  '/book-cleanup': typeof BookCleanupRoute
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
   '/resources': typeof ResourcesRoute
@@ -96,6 +105,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/accounting'
+    | '/book-cleanup'
     | '/contact'
     | '/industries'
     | '/resources'
@@ -106,6 +116,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/accounting'
+    | '/book-cleanup'
     | '/contact'
     | '/industries'
     | '/resources'
@@ -116,6 +127,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/accounting'
+    | '/book-cleanup'
     | '/contact'
     | '/industries'
     | '/resources'
@@ -127,6 +139,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   AccountingRoute: typeof AccountingRoute
+  BookCleanupRoute: typeof BookCleanupRoute
   ContactRoute: typeof ContactRoute
   IndustriesRoute: typeof IndustriesRoute
   ResourcesRoute: typeof ResourcesRoute
@@ -171,6 +184,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/book-cleanup': {
+      id: '/book-cleanup'
+      path: '/book-cleanup'
+      fullPath: '/book-cleanup'
+      preLoaderRoute: typeof BookCleanupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/accounting': {
       id: '/accounting'
       path: '/accounting'
@@ -199,6 +219,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AccountingRoute: AccountingRoute,
+  BookCleanupRoute: BookCleanupRoute,
   ContactRoute: ContactRoute,
   IndustriesRoute: IndustriesRoute,
   ResourcesRoute: ResourcesRoute,
