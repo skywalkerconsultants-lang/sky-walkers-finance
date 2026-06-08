@@ -113,4 +113,4 @@ export function ServiceTemplate({
   );
 }
 
-export type { LucideIcon };
+
