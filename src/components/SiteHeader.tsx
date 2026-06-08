@@ -5,9 +5,10 @@ import { Menu, X } from "lucide-react";
 const navItems = [
   { to: "/", label: "Home" },
   { to: "/services", label: "Services" },
-  { to: "/industries", label: "Industries" },
+  { to: "/accounting", label: "Accounting" },
+  { to: "/vat", label: "VAT" },
+  { to: "/corporate-tax", label: "Corporate Tax" },
   { to: "/resources", label: "Resources" },
-  { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
@@ -26,8 +27,8 @@ export function SiteHeader() {
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-smooth ${
         scrolled
-          ? "bg-background/85 backdrop-blur-lg border-b border-border"
-          : "bg-transparent"
+          ? "bg-background/85 backdrop-blur-lg border-b border-border text-foreground"
+          : "bg-transparent text-white"
       }`}
     >
       <div className="container mx-auto max-w-7xl px-5 lg:px-8 h-16 flex items-center justify-between">
@@ -47,7 +48,7 @@ export function SiteHeader() {
               to={n.to}
               activeOptions={{ exact: true }}
               activeProps={{ className: "text-primary" }}
-              className="px-3 py-2 text-sm font-medium text-foreground/80 hover:text-primary transition-smooth"
+              className="px-3 py-2 text-sm font-medium opacity-90 hover:text-primary transition-smooth"
             >
               {n.label}
             </Link>
@@ -75,7 +76,7 @@ export function SiteHeader() {
       </div>
 
       {open && (
-        <div className="lg:hidden border-t border-border bg-background">
+        <div className="lg:hidden border-t border-border bg-background text-foreground">
           <div className="px-5 py-4 flex flex-col gap-1">
             {navItems.map((n) => (
               <Link

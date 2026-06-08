@@ -9,14 +9,24 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VatRouteImport } from './routes/vat'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as ManagementReportingRouteImport } from './routes/management-reporting'
 import { Route as IndustriesRouteImport } from './routes/industries'
+import { Route as CorporateTaxRouteImport } from './routes/corporate-tax'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as BookCleanupRouteImport } from './routes/book-cleanup'
+import { Route as AccountingRouteImport } from './routes/accounting'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const VatRoute = VatRouteImport.update({
+  id: '/vat',
+  path: '/vat',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -32,14 +42,34 @@ const ResourcesRoute = ResourcesRouteImport.update({
   path: '/resources',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ManagementReportingRoute = ManagementReportingRouteImport.update({
+  id: '/management-reporting',
+  path: '/management-reporting',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndustriesRoute = IndustriesRouteImport.update({
   id: '/industries',
   path: '/industries',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CorporateTaxRoute = CorporateTaxRouteImport.update({
+  id: '/corporate-tax',
+  path: '/corporate-tax',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookCleanupRoute = BookCleanupRouteImport.update({
+  id: '/book-cleanup',
+  path: '/book-cleanup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccountingRoute = AccountingRouteImport.update({
+  id: '/accounting',
+  path: '/accounting',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -56,73 +86,115 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/accounting': typeof AccountingRoute
+  '/book-cleanup': typeof BookCleanupRoute
   '/contact': typeof ContactRoute
+  '/corporate-tax': typeof CorporateTaxRoute
   '/industries': typeof IndustriesRoute
+  '/management-reporting': typeof ManagementReportingRoute
   '/resources': typeof ResourcesRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/vat': typeof VatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/accounting': typeof AccountingRoute
+  '/book-cleanup': typeof BookCleanupRoute
   '/contact': typeof ContactRoute
+  '/corporate-tax': typeof CorporateTaxRoute
   '/industries': typeof IndustriesRoute
+  '/management-reporting': typeof ManagementReportingRoute
   '/resources': typeof ResourcesRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/vat': typeof VatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/accounting': typeof AccountingRoute
+  '/book-cleanup': typeof BookCleanupRoute
   '/contact': typeof ContactRoute
+  '/corporate-tax': typeof CorporateTaxRoute
   '/industries': typeof IndustriesRoute
+  '/management-reporting': typeof ManagementReportingRoute
   '/resources': typeof ResourcesRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/vat': typeof VatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/about'
+    | '/accounting'
+    | '/book-cleanup'
     | '/contact'
+    | '/corporate-tax'
     | '/industries'
+    | '/management-reporting'
     | '/resources'
     | '/services'
     | '/sitemap.xml'
+    | '/vat'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
+    | '/accounting'
+    | '/book-cleanup'
     | '/contact'
+    | '/corporate-tax'
     | '/industries'
+    | '/management-reporting'
     | '/resources'
     | '/services'
     | '/sitemap.xml'
+    | '/vat'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/accounting'
+    | '/book-cleanup'
     | '/contact'
+    | '/corporate-tax'
     | '/industries'
+    | '/management-reporting'
     | '/resources'
     | '/services'
     | '/sitemap.xml'
+    | '/vat'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AccountingRoute: typeof AccountingRoute
+  BookCleanupRoute: typeof BookCleanupRoute
   ContactRoute: typeof ContactRoute
+  CorporateTaxRoute: typeof CorporateTaxRoute
   IndustriesRoute: typeof IndustriesRoute
+  ManagementReportingRoute: typeof ManagementReportingRoute
   ResourcesRoute: typeof ResourcesRoute
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  VatRoute: typeof VatRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/vat': {
+      id: '/vat'
+      path: '/vat'
+      fullPath: '/vat'
+      preLoaderRoute: typeof VatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
@@ -144,6 +216,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResourcesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/management-reporting': {
+      id: '/management-reporting'
+      path: '/management-reporting'
+      fullPath: '/management-reporting'
+      preLoaderRoute: typeof ManagementReportingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/industries': {
       id: '/industries'
       path: '/industries'
@@ -151,11 +230,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndustriesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/corporate-tax': {
+      id: '/corporate-tax'
+      path: '/corporate-tax'
+      fullPath: '/corporate-tax'
+      preLoaderRoute: typeof CorporateTaxRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book-cleanup': {
+      id: '/book-cleanup'
+      path: '/book-cleanup'
+      fullPath: '/book-cleanup'
+      preLoaderRoute: typeof BookCleanupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/accounting': {
+      id: '/accounting'
+      path: '/accounting'
+      fullPath: '/accounting'
+      preLoaderRoute: typeof AccountingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -178,11 +278,16 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AccountingRoute: AccountingRoute,
+  BookCleanupRoute: BookCleanupRoute,
   ContactRoute: ContactRoute,
+  CorporateTaxRoute: CorporateTaxRoute,
   IndustriesRoute: IndustriesRoute,
+  ManagementReportingRoute: ManagementReportingRoute,
   ResourcesRoute: ResourcesRoute,
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  VatRoute: VatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
