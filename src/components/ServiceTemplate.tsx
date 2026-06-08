@@ -1,4 +1,4 @@
-import { LucideIcon, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { PageHero, PageCTA } from "@/components/PagePieces";
 import { FaqSection } from "@/components/FaqSection";
