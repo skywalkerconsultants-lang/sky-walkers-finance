@@ -6,7 +6,7 @@ import { Reveal } from "@/components/Reveal";
 import { FaqSection } from "@/components/FaqSection";
 import {
   Calculator, FileCheck2, Receipt, Users2, Building2, LineChart,
-  Sparkles, ArrowRight, Eraser, BarChart3, Briefcase, HandshakeIcon,
+  ArrowRight, Eraser, BarChart3, Briefcase,
   Rocket, ShoppingBag, Truck, Globe2, Megaphone, Cloud, Stethoscope,
   Utensils, Home as HomeIcon, Store, Download, FileText, ShieldCheck,
 } from "lucide-react";
