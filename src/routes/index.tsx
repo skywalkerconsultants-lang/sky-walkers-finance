@@ -185,9 +185,9 @@ function Home() {
                   </div>
                   <h3 className="mt-5 font-display font-semibold text-xl">{title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground leading-relaxed flex-1">{desc}</p>
-                  <Link to={to} className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
+                  <a href={to} className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
                     Learn More <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Link>
+                  </a>
                 </div>
               </Reveal>
             ))}
