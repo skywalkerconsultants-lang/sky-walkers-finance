@@ -27,8 +27,8 @@ export function SiteHeader() {
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-smooth ${
         scrolled
-          ? "bg-background/85 backdrop-blur-lg border-b border-border"
-          : "bg-transparent"
+          ? "bg-background/85 backdrop-blur-lg border-b border-border text-foreground"
+          : "bg-transparent text-white"
       }`}
     >
       <div className="container mx-auto max-w-7xl px-5 lg:px-8 h-16 flex items-center justify-between">
@@ -48,7 +48,7 @@ export function SiteHeader() {
               to={n.to}
               activeOptions={{ exact: true }}
               activeProps={{ className: "text-primary" }}
-              className="px-3 py-2 text-sm font-medium text-foreground/80 hover:text-primary transition-smooth"
+              className="px-3 py-2 text-sm font-medium opacity-90 hover:text-primary transition-smooth"
             >
               {n.label}
             </Link>
