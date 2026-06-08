@@ -5,9 +5,10 @@ import { Menu, X } from "lucide-react";
 const navItems = [
   { to: "/", label: "Home" },
   { to: "/services", label: "Services" },
-  { to: "/industries", label: "Industries" },
+  { to: "/accounting", label: "Accounting" },
+  { to: "/vat", label: "VAT" },
+  { to: "/corporate-tax", label: "Corporate Tax" },
   { to: "/resources", label: "Resources" },
-  { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
