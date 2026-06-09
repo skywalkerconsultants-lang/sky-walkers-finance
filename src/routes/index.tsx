@@ -8,9 +8,11 @@ import {
   Calculator, FileCheck2, Receipt, Users2, Building2, LineChart,
   ArrowRight, Eraser, BarChart3, Briefcase,
   Rocket, ShoppingBag, Truck, Globe2, Megaphone, Cloud, Stethoscope,
-  Utensils, Home as HomeIcon, Store, Download, FileText, ShieldCheck,
+  Utensils, Home as HomeIcon, Store, FileText, ShieldCheck,
 } from "lucide-react";
-import heroImg from "@/assets/hero-dashboard.jpg";
+import dubaiHero from "@/assets/dubai-hero.jpg";
+import logo from "@/assets/skywalker-logo.png.asset.json";
+import ogHome from "@/assets/og-home.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -20,6 +22,8 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Sky Walkers Consultancy — UAE Accounting & Tax Partner" },
       { property: "og:description", content: "Smart accounting, tax and financial reporting solutions for growing UAE businesses and CPA firms." },
       { property: "og:url", content: "/" },
+      { property: "og:image", content: ogHome.url },
+      { name: "twitter:image", content: ogHome.url },
     ],
     links: [{ rel: "canonical", href: "/" }],
   }),
@@ -108,18 +112,24 @@ function Home() {
   return (
     <SiteLayout>
       {/* SECTION 1 — HERO */}
-      <section className="relative pt-28 pb-20 lg:pt-36 lg:pb-32 bg-hero text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.05] [background-image:linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] [background-size:48px_48px]" />
+      <section className="relative pt-28 pb-20 lg:pt-36 lg:pb-32 text-white overflow-hidden">
+        {/* Dubai skyline background, blurred */}
+        <div className="absolute inset-0">
+          <img src={dubaiHero} alt="Dubai skyline" width={1920} height={1080}
+            className="w-full h-full object-cover scale-110 blur-[6px]" />
+          <div className="absolute inset-0 bg-[oklch(0.15_0_0)]/80" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.12_0_0)]/90 via-[oklch(0.15_0_0)]/70 to-transparent" />
+        </div>
         <div className="container mx-auto max-w-7xl px-5 lg:px-8 relative grid lg:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-up">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-medium backdrop-blur">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-xs font-medium backdrop-blur">
               <span className="w-1.5 h-1.5 rounded-full bg-primary" />
               UAE • Accounting, Tax & Financial Reporting
             </div>
-            <h1 className="mt-6 font-display font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight">
+            <h1 className="mt-6 font-display font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight drop-shadow-lg">
               Smart Accounting, Tax & <span className="text-primary">Financial Reporting</span> Solutions for Growing Businesses
             </h1>
-            <p className="mt-6 text-lg text-white/70 max-w-xl leading-relaxed">
+            <p className="mt-6 text-lg text-white/80 max-w-xl leading-relaxed">
               Helping UAE businesses, startups, free zone companies and CPA firms stay compliant, organized
               and growth-ready through accounting, VAT filing, corporate tax, payroll, book cleanup and
               management reporting services.
@@ -127,7 +137,7 @@ function Home() {
             <div className="mt-8">
               <CtaButtons light />
             </div>
-            <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs text-white/70">
+            <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs text-white/80">
               {trustBadges.map((t) => (
                 <div key={t} className="flex items-start gap-2">
                   <span className="mt-1 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
@@ -136,10 +146,12 @@ function Home() {
               ))}
             </div>
           </div>
-          <div className="relative animate-fade-up">
-            <div className="absolute -inset-6 bg-gradient-primary opacity-20 blur-3xl rounded-3xl" />
-            <img src={heroImg} alt="UAE accounting and reporting dashboard preview" width={1280} height={1280}
-              className="relative rounded-2xl border border-white/10 shadow-glow w-full h-auto" />
+          <div className="relative animate-fade-up flex justify-center">
+            <div className="absolute -inset-6 bg-gradient-primary opacity-25 blur-3xl rounded-3xl" />
+            <div className="relative w-full max-w-md rounded-3xl bg-white border border-white/20 shadow-glow p-10 sm:p-14">
+              <img src={logo.url} alt="Sky Walkers Consultancy logo" width={660} height={372}
+                className="w-full h-auto" />
+            </div>
           </div>
         </div>
       </section>
@@ -286,9 +298,9 @@ function Home() {
       <section className="py-24 bg-[oklch(0.15_0_0)] text-white">
         <div className="container mx-auto max-w-7xl px-5 lg:px-8">
           <Reveal className="max-w-2xl">
-            <span className="text-xs font-semibold tracking-[0.18em] uppercase text-primary">Free resources</span>
-            <h2 className="mt-3 font-display font-bold text-3xl sm:text-4xl lg:text-5xl">Practical tools to get ahead</h2>
-            <p className="mt-4 text-white/70 text-lg">Download free guides and checklists built for UAE founders and finance teams.</p>
+            <span className="text-xs font-semibold tracking-[0.18em] uppercase text-primary">Resources</span>
+            <h2 className="mt-3 font-display font-bold text-3xl sm:text-4xl lg:text-5xl">Guides & official UAE links</h2>
+            <p className="mt-4 text-white/70 text-lg">Practical explainers and trusted references for UAE founders and finance teams.</p>
           </Reveal>
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {resources.map((r, i) => (
@@ -297,7 +309,7 @@ function Home() {
                   <FileText className="w-7 h-7 text-primary" />
                   <h3 className="mt-4 font-display font-semibold text-lg">{r}</h3>
                   <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-                    <Download className="w-4 h-4" /> Download
+                    Explore <ArrowRight className="w-4 h-4" />
                   </span>
                 </Link>
               </Reveal>

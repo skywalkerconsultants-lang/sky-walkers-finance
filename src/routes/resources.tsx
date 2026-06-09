@@ -2,16 +2,19 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { PageHero, PageCTA } from "@/components/PagePieces";
 import { Reveal } from "@/components/Reveal";
-import { ArrowRight, Download, FileText } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import ogResources from "@/assets/og-resources.jpg.asset.json";
 
 export const Route = createFileRoute("/resources")({
   head: () => ({
     meta: [
       { title: "Resources Hub — UAE Tax, VAT, Accounting & Reporting | Sky Walkers" },
-      { name: "description", content: "Practical guides on UAE corporate tax, VAT filing, accounting, financial reporting, business setup and CPA support — plus free downloadable toolkits." },
+      { name: "description", content: "Curated guides and official UAE resources on corporate tax, VAT filing, accounting, financial reporting, business setup and CPA support." },
       { property: "og:title", content: "Resources Hub — Sky Walkers Consultancy" },
-      { property: "og:description", content: "Guides, checklists and toolkits on UAE tax, VAT, accounting and reporting." },
+      { property: "og:description", content: "Guides, checklists and official UAE links on tax, VAT, accounting and reporting." },
       { property: "og:url", content: "/resources" },
+      { property: "og:image", content: ogResources.url },
+      { name: "twitter:image", content: ogResources.url },
     ],
     links: [{ rel: "canonical", href: "/resources" }],
   }),
@@ -22,32 +25,88 @@ const categories = [
   "Corporate Tax", "VAT", "Accounting", "Financial Reporting", "Business Setup", "CPA Support",
 ];
 
-const articles = [
-  { title: "UAE Corporate Tax Explained for SMEs", cat: "Corporate Tax" },
-  { title: "How to Prepare for Corporate Tax Filing", cat: "Corporate Tax" },
-  { title: "VAT Filing Checklist for UAE Businesses", cat: "VAT" },
-  { title: "Common VAT Mistakes Businesses Make", cat: "VAT" },
-  { title: "Accounting Best Practices for Startups", cat: "Accounting" },
-  { title: "Why Monthly Financial Reporting Matters", cat: "Financial Reporting" },
-  { title: "Book Cleanup Guide for Growing Businesses", cat: "Accounting" },
-  { title: "How to Choose the Right Accounting Software", cat: "Accounting" },
-  { title: "Management Reporting for Better Decisions", cat: "Financial Reporting" },
-  { title: "Financial KPIs Every Business Should Track", cat: "Financial Reporting" },
-];
+type Resource = { title: string; cat: string; url: string; desc: string };
 
-const downloads = [
-  "UAE Corporate Tax Guide",
-  "VAT Filing Checklist",
-  "Accounting Health Check",
-  "Month-End Closing Checklist",
-  "SME Reporting Toolkit",
+const articles: Resource[] = [
+  {
+    title: "UAE Corporate Tax — Official FTA Portal",
+    cat: "Corporate Tax",
+    url: "https://tax.gov.ae/en/taxes/corporate.tax.aspx",
+    desc: "The Federal Tax Authority's official corporate tax hub. Covers the 9% standard rate, the AED 375,000 taxable income threshold, who must register, filing timelines and the latest legislative updates for UAE businesses.",
+  },
+  {
+    title: "Corporate Tax Registration on EmaraTax",
+    cat: "Corporate Tax",
+    url: "https://eservices.tax.gov.ae/",
+    desc: "EmaraTax is the FTA's online platform where every taxable person registers for and files corporate tax. Use it to create your profile, submit registration, and manage returns and payments.",
+  },
+  {
+    title: "Small Business Relief Guidance",
+    cat: "Corporate Tax",
+    url: "https://tax.gov.ae/en/legislation.and.cabinet.decisions.aspx",
+    desc: "FTA decisions and guides explaining Small Business Relief, which lets qualifying businesses with revenue under the threshold elect to be treated as having no taxable income for a tax period.",
+  },
+  {
+    title: "UAE VAT — Official FTA Portal",
+    cat: "VAT",
+    url: "https://tax.gov.ae/en/taxes/vat.aspx",
+    desc: "Everything on the UAE's 5% VAT: mandatory vs voluntary registration thresholds, taxable supplies, zero-rated and exempt categories, return periods and penalties for non-compliance.",
+  },
+  {
+    title: "VAT Returns & Filing Guide",
+    cat: "VAT",
+    url: "https://tax.gov.ae/en/services/vat.return.filing.aspx",
+    desc: "Step-by-step FTA guidance on preparing and filing periodic VAT returns through EmaraTax, including how to calculate output and input VAT and meet filing deadlines.",
+  },
+  {
+    title: "Accounting Records & Bookkeeping Requirements",
+    cat: "Accounting",
+    url: "https://tax.gov.ae/en/legislation.and.cabinet.decisions.aspx",
+    desc: "What records UAE businesses must keep and for how long. Accurate, reconciled books are the foundation for both VAT and corporate tax compliance — and for clean management reporting.",
+  },
+  {
+    title: "Choosing the Right Accounting Software",
+    cat: "Accounting",
+    url: "https://quickbooks.intuit.com/global/",
+    desc: "A look at cloud accounting platforms (QuickBooks, Zoho Books, Xero, Tally) and how to pick the stack that fits your transaction volume, industry and reporting needs.",
+  },
+  {
+    title: "Why Monthly Financial Reporting Matters",
+    cat: "Financial Reporting",
+    url: "https://www.ifrs.org/issued-standards/list-of-standards/",
+    desc: "Monthly P&L, balance sheet and cash flow reporting under IFRS gives founders real-time visibility. This reference links to the official list of IFRS standards used across the UAE.",
+  },
+  {
+    title: "Financial KPIs Every Business Should Track",
+    cat: "Financial Reporting",
+    url: "https://www.ifrs.org/issued-standards/list-of-standards/",
+    desc: "Gross margin, burn rate, runway, working capital and cash conversion — the dashboard metrics that turn bookkeeping into decisions. Built on IFRS-aligned financial statements.",
+  },
+  {
+    title: "Setting Up a Business in the UAE",
+    cat: "Business Setup",
+    url: "https://u.ae/en/information-and-services/business/starting-a-business",
+    desc: "The UAE Government's official guide to mainland and free zone company formation — licensing, ownership rules, visas and the approvals needed to start trading.",
+  },
+  {
+    title: "Free Zone Company Setup Overview",
+    cat: "Business Setup",
+    url: "https://u.ae/en/information-and-services/business/free-zones",
+    desc: "How UAE free zones work, the benefits they offer, and the qualifying-income rules that determine free zone corporate tax treatment.",
+  },
+  {
+    title: "Offshore Accounting Support for CPA Firms",
+    cat: "CPA Support",
+    url: "/contact",
+    desc: "How CPA and accounting firms use our offshore team for bookkeeping, cleanup projects, month-end close and reporting support. Talk to us about a scalable engagement model.",
+  },
 ];
 
 function ResourcesPage() {
   return (
     <SiteLayout>
       <PageHero eyebrow="Resources Hub" title="Guides & insights for UAE businesses"
-        subtitle="Plain-English explainers on corporate tax, VAT, accounting, financial reporting, business setup and CPA support." />
+        subtitle="Curated explainers and official UAE links on corporate tax, VAT, accounting, financial reporting, business setup and CPA support." />
 
       {/* CATEGORIES */}
       <section className="py-16">
@@ -62,47 +121,35 @@ function ResourcesPage() {
         </div>
       </section>
 
-      {/* FEATURED ARTICLES */}
-      <section className="pb-8">
+      {/* RESOURCES */}
+      <section className="pb-24">
         <div className="container mx-auto max-w-7xl px-5 lg:px-8">
           <Reveal className="mb-8">
-            <h2 className="font-display font-bold text-2xl sm:text-3xl">Featured articles</h2>
+            <h2 className="font-display font-bold text-2xl sm:text-3xl">Resources & official links</h2>
+            <p className="mt-2 text-muted-foreground">Trusted references and detailed guides — each links straight to the source.</p>
           </Reveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {articles.map((p, i) => (
-              <Reveal key={p.title} delay={i * 40}>
-                <article className="card-hover h-full rounded-2xl border border-border bg-card p-7 flex flex-col">
-                  <div className="text-xs text-primary font-semibold uppercase tracking-wider">{p.cat}</div>
-                  <h3 className="mt-3 font-display font-semibold text-lg leading-snug flex-1">{p.title}</h3>
-                  <div className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-                    Read article <ArrowRight className="w-4 h-4" />
-                  </div>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FREE DOWNLOADS */}
-      <section className="py-20">
-        <div className="container mx-auto max-w-7xl px-5 lg:px-8">
-          <Reveal className="mb-8">
-            <span className="text-xs font-semibold tracking-[0.18em] uppercase text-primary">Free downloads</span>
-            <h2 className="mt-3 font-display font-bold text-2xl sm:text-3xl">Lead magnets & toolkits</h2>
-          </Reveal>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {downloads.map((d, i) => (
-              <Reveal key={d} delay={i * 50}>
-                <div className="card-hover h-full rounded-2xl border border-border bg-accent/60 p-7">
-                  <FileText className="w-7 h-7 text-primary" />
-                  <h3 className="mt-4 font-display font-semibold text-lg">{d}</h3>
-                  <a href="/contact" className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-                    <Download className="w-4 h-4" /> Download
+            {articles.map((p, i) => {
+              const external = p.url.startsWith("http");
+              return (
+                <Reveal key={p.title} delay={i * 40}>
+                  <a
+                    href={p.url}
+                    target={external ? "_blank" : undefined}
+                    rel={external ? "noreferrer" : undefined}
+                    className="card-hover group h-full block rounded-2xl border border-border bg-card p-7"
+                  >
+                    <div className="text-xs text-primary font-semibold uppercase tracking-wider">{p.cat}</div>
+                    <h3 className="mt-3 font-display font-semibold text-lg leading-snug">{p.title}</h3>
+                    <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
+                    <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
+                      {external ? "Visit resource" : "Get in touch"}
+                      <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                    </span>
                   </a>
-                </div>
-              </Reveal>
-            ))}
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>

@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/skywalker-logo.png.asset.json";
 
 const navItems = [
   { to: "/", label: "Home" },
@@ -31,13 +32,11 @@ export function SiteHeader() {
           : "bg-transparent text-white"
       }`}
     >
-      <div className="container mx-auto max-w-7xl px-5 lg:px-8 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 font-display font-bold text-lg tracking-tight">
-          <span className="inline-flex items-center justify-center w-8 h-8 rounded-md bg-gradient-primary text-primary-foreground shadow-glow">
-            S
-          </span>
-          <span>
-            SKY <span className="text-primary">WALKERS</span>
+      <div className="container mx-auto max-w-7xl px-5 lg:px-8 h-20 flex items-center justify-between">
+        <Link to="/" className="flex items-center">
+          <span className={`inline-flex items-center rounded-xl px-2.5 py-1.5 transition-smooth ${scrolled ? "" : "bg-white shadow-glow"}`}>
+            <img src={logo.url} alt="Sky Walkers Consultancy" width={660} height={372}
+              className="h-12 lg:h-14 w-auto" />
           </span>
         </Link>
 

@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { PageHero, PageCTA } from "@/components/PagePieces";
 import { Rocket, Briefcase, ShoppingBag, Truck, Globe2, Sparkles, Utensils, Store } from "lucide-react";
+import ogIndustries from "@/assets/og-industries.jpg.asset.json";
 
 export const Route = createFileRoute("/industries")({
   head: () => ({
@@ -11,6 +12,8 @@ export const Route = createFileRoute("/industries")({
       { property: "og:title", content: "Industries — Sky Walkers Consultancy" },
       { property: "og:description", content: "Industry-specific finance playbooks for the sectors driving the UAE economy." },
       { property: "og:url", content: "/industries" },
+      { property: "og:image", content: ogIndustries.url },
+      { name: "twitter:image", content: ogIndustries.url },
     ],
     links: [{ rel: "canonical", href: "/industries" }],
   }),

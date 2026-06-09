@@ -6,6 +6,7 @@ import {
   Calculator, Eraser, Receipt, FileCheck2, Users2, BarChart3,
   LineChart, Building2, Briefcase, ArrowRight,
 } from "lucide-react";
+import ogServices from "@/assets/og-services.jpg.asset.json";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -15,6 +16,8 @@ export const Route = createFileRoute("/services")({
       { property: "og:title", content: "Services — Sky Walkers Consultancy" },
       { property: "og:description", content: "Accounting, VAT, corporate tax, payroll, reporting and CPA support for UAE businesses." },
       { property: "og:url", content: "/services" },
+      { property: "og:image", content: ogServices.url },
+      { name: "twitter:image", content: ogServices.url },
     ],
     links: [{ rel: "canonical", href: "/services" }],
   }),
