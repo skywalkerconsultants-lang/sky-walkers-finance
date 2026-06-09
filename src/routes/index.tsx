@@ -298,9 +298,9 @@ function Home() {
       <section className="py-24 bg-[oklch(0.15_0_0)] text-white">
         <div className="container mx-auto max-w-7xl px-5 lg:px-8">
           <Reveal className="max-w-2xl">
-            <span className="text-xs font-semibold tracking-[0.18em] uppercase text-primary">Free resources</span>
-            <h2 className="mt-3 font-display font-bold text-3xl sm:text-4xl lg:text-5xl">Practical tools to get ahead</h2>
-            <p className="mt-4 text-white/70 text-lg">Download free guides and checklists built for UAE founders and finance teams.</p>
+            <span className="text-xs font-semibold tracking-[0.18em] uppercase text-primary">Resources</span>
+            <h2 className="mt-3 font-display font-bold text-3xl sm:text-4xl lg:text-5xl">Guides & official UAE links</h2>
+            <p className="mt-4 text-white/70 text-lg">Practical explainers and trusted references for UAE founders and finance teams.</p>
           </Reveal>
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {resources.map((r, i) => (
@@ -309,7 +309,7 @@ function Home() {
                   <FileText className="w-7 h-7 text-primary" />
                   <h3 className="mt-4 font-display font-semibold text-lg">{r}</h3>
                   <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-                    <Download className="w-4 h-4" /> Download
+                    Explore <ArrowRight className="w-4 h-4" />
                   </span>
                 </Link>
               </Reveal>
