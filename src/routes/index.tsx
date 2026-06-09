@@ -112,18 +112,24 @@ function Home() {
   return (
     <SiteLayout>
       {/* SECTION 1 — HERO */}
-      <section className="relative pt-28 pb-20 lg:pt-36 lg:pb-32 bg-hero text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.05] [background-image:linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] [background-size:48px_48px]" />
+      <section className="relative pt-28 pb-20 lg:pt-36 lg:pb-32 text-white overflow-hidden">
+        {/* Dubai skyline background, blurred */}
+        <div className="absolute inset-0">
+          <img src={dubaiHero} alt="Dubai skyline" width={1920} height={1080}
+            className="w-full h-full object-cover scale-110 blur-[6px]" />
+          <div className="absolute inset-0 bg-[oklch(0.15_0_0)]/80" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.12_0_0)]/90 via-[oklch(0.15_0_0)]/70 to-transparent" />
+        </div>
         <div className="container mx-auto max-w-7xl px-5 lg:px-8 relative grid lg:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-up">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-medium backdrop-blur">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-xs font-medium backdrop-blur">
               <span className="w-1.5 h-1.5 rounded-full bg-primary" />
               UAE • Accounting, Tax & Financial Reporting
             </div>
-            <h1 className="mt-6 font-display font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight">
+            <h1 className="mt-6 font-display font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight drop-shadow-lg">
               Smart Accounting, Tax & <span className="text-primary">Financial Reporting</span> Solutions for Growing Businesses
             </h1>
-            <p className="mt-6 text-lg text-white/70 max-w-xl leading-relaxed">
+            <p className="mt-6 text-lg text-white/80 max-w-xl leading-relaxed">
               Helping UAE businesses, startups, free zone companies and CPA firms stay compliant, organized
               and growth-ready through accounting, VAT filing, corporate tax, payroll, book cleanup and
               management reporting services.
@@ -131,7 +137,7 @@ function Home() {
             <div className="mt-8">
               <CtaButtons light />
             </div>
-            <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs text-white/70">
+            <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs text-white/80">
               {trustBadges.map((t) => (
                 <div key={t} className="flex items-start gap-2">
                   <span className="mt-1 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
@@ -140,10 +146,12 @@ function Home() {
               ))}
             </div>
           </div>
-          <div className="relative animate-fade-up">
-            <div className="absolute -inset-6 bg-gradient-primary opacity-20 blur-3xl rounded-3xl" />
-            <img src={heroImg} alt="UAE accounting and reporting dashboard preview" width={1280} height={1280}
-              className="relative rounded-2xl border border-white/10 shadow-glow w-full h-auto" />
+          <div className="relative animate-fade-up flex justify-center">
+            <div className="absolute -inset-6 bg-gradient-primary opacity-25 blur-3xl rounded-3xl" />
+            <div className="relative w-full max-w-md rounded-3xl bg-white border border-white/20 shadow-glow p-10 sm:p-14">
+              <img src={logo.url} alt="Sky Walkers Consultancy logo" width={660} height={372}
+                className="w-full h-auto" />
+            </div>
           </div>
         </div>
       </section>
