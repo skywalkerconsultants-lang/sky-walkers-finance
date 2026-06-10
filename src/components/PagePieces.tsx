@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { MessageCircle, CalendarDays } from "lucide-react";
 
-const WHATSAPP = "https://wa.me/971500000000";
+const WHATSAPP = "https://wa.me/971553104053";
 
 export function CtaButtons({ light = false }: { light?: boolean }) {
   return (
