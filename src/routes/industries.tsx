@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { PageHero, PageCTA } from "@/components/PagePieces";
 import { Rocket, Briefcase, ShoppingBag, Truck, Globe2, Sparkles, Utensils, Store } from "lucide-react";
 import ogIndustries from "@/assets/og-industries.jpg.asset.json";
+import dubaiArt from "@/assets/dubai-art.jpg";
 
 export const Route = createFileRoute("/industries")({
   head: () => ({
