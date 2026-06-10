@@ -38,16 +38,34 @@ const stats = [
   { end: 4, suffix: "+", label: "Accounting Platforms" },
 ];
 
-const services = [
-  { icon: Calculator, title: "Accounting & Bookkeeping", desc: "Accurate daily books, reconciliations and monthly reporting.", to: "/accounting" },
-  { icon: Eraser, title: "Book Cleanup & Catch-Up", desc: "Organize, reconcile and rebuild accurate financial records.", to: "/book-cleanup" },
-  { icon: Receipt, title: "VAT Filing Services", desc: "Registration, returns and full UAE VAT compliance.", to: "/vat" },
-  { icon: FileCheck2, title: "Corporate Tax Filing", desc: "Registration, assessment, filing and CT compliance.", to: "/corporate-tax" },
-  { icon: Users2, title: "Payroll & WPS", desc: "End-to-end payroll processing and WPS management.", to: "/services" },
-  { icon: BarChart3, title: "Management Reporting", desc: "P&L, cash flow, KPI dashboards and analysis.", to: "/management-reporting" },
-  { icon: LineChart, title: "Virtual CFO Services", desc: "Budgeting, forecasting and strategic financial planning.", to: "/services" },
-  { icon: Building2, title: "Business Setup Advisory", desc: "Mainland and free zone company formation guidance.", to: "/services" },
-  { icon: Briefcase, title: "CPA Firm Support", desc: "Offshore bookkeeping, cleanup and month-end close support.", to: "/services" },
+const mainServices = [
+  {
+    icon: Calculator, title: "Accounting & Bookkeeping", to: "/accounting",
+    desc: "Accurate daily books, reconciliations and clear monthly reporting — the foundation of every compliant business.",
+  },
+  {
+    icon: Receipt, title: "VAT Filing Services", to: "/vat",
+    desc: "Registration, periodic returns and full UAE VAT compliance handled end-to-end, on time, every time.",
+  },
+  {
+    icon: FileCheck2, title: "Corporate Tax Filing", to: "/corporate-tax",
+    desc: "Registration, assessment, filing and ongoing corporate tax compliance aligned with FTA requirements.",
+  },
+];
+
+const moreServices = [
+  { icon: Eraser, title: "Book Cleanup & Catch-Up", points: ["Backlog & catch-up bookkeeping", "Account reconciliations", "Record rebuild & corrections"] },
+  { icon: Users2, title: "Payroll & WPS", points: ["Monthly payroll processing", "WPS-compliant disbursement", "Payslips & leave records"] },
+  { icon: BarChart3, title: "Management Reporting", points: ["P&L, balance sheet & cash flow", "KPI dashboards", "Monthly performance reviews"] },
+  { icon: LineChart, title: "Virtual CFO Services", points: ["Budgeting & forecasting", "Cash flow planning", "Financial strategy"] },
+  { icon: Building2, title: "Business Setup Advisory", points: ["Mainland & free zone setup", "Licensing guidance", "Structuring advice"] },
+  { icon: Briefcase, title: "CPA Firm Support", points: ["Offshore bookkeeping", "Cleanup projects", "Month-end close support"] },
+];
+
+const trustStrip = [
+  "QuickBooks", "Zoho Books", "Xero", "Tally", "UAE Compliance",
+  "Financial Reporting", "Tax Advisory", "VAT Filing", "Corporate Tax",
+  "Payroll & WPS", "Free Zone Setup", "Management Reporting",
 ];
 
 const steps = [
