@@ -345,17 +345,21 @@ function Home() {
       <section className="py-24 bg-accent/50">
         <div className="container mx-auto max-w-7xl px-5 lg:px-8">
           <Reveal className="max-w-2xl">
-            <span className="text-xs font-semibold tracking-[0.18em] uppercase text-primary">Success stories</span>
-            <h2 className="mt-3 font-display font-bold text-3xl sm:text-4xl lg:text-5xl">Real results for real businesses</h2>
+            <span className="text-xs font-semibold tracking-[0.18em] uppercase text-primary">Real business results</span>
+            <h2 className="mt-3 font-display font-bold text-3xl sm:text-4xl lg:text-5xl">Best services at the lowest price in Dubai</h2>
+            <p className="mt-4 text-muted-foreground text-lg">
+              We prioritise the key services we deliver best — giving small and medium businesses premium quality
+              at the lowest price in Dubai.
+            </p>
           </Reveal>
           <div className="mt-12 grid sm:grid-cols-2 gap-5">
             {caseStudies.map((c, i) => (
               <Reveal key={c.tag} delay={i * 70}>
-                <div className="card-hover h-full rounded-2xl border border-border bg-card p-8 shadow-card">
-                  <span className="inline-flex items-center gap-2 rounded-full bg-accent px-3 py-1 text-xs font-semibold text-primary uppercase tracking-wider">
+                <div className={`card-hover h-full rounded-2xl border p-8 shadow-card ${c.featured ? "sm:col-span-2 border-primary/40 bg-gradient-primary text-primary-foreground" : "border-border bg-card"}`}>
+                  <span className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider ${c.featured ? "bg-white/20 text-primary-foreground" : "bg-accent text-primary"}`}>
                     {c.tag}
                   </span>
-                  <p className="mt-4 text-lg leading-relaxed text-foreground/80">{c.text}</p>
+                  <p className={`mt-4 leading-relaxed ${c.featured ? "text-xl sm:text-2xl font-display font-semibold" : "text-lg text-foreground/80"}`}>{c.text}</p>
                 </div>
               </Reveal>
             ))}
