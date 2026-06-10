@@ -29,10 +29,10 @@ function ContactPage() {
         <div className="container mx-auto max-w-6xl px-5 lg:px-8 grid lg:grid-cols-5 gap-10">
           <div className="lg:col-span-2 space-y-5">
             {[
-              { icon: MessageCircle, label: "WhatsApp", v: "+971 50 000 0000", href: "https://wa.me/971500000000" },
-              { icon: Phone, label: "Phone", v: "+971 4 000 0000" },
-              { icon: Mail, label: "Email", v: "hello@skywalkers.ae", href: "mailto:hello@skywalkers.ae" },
-              { icon: MapPin, label: "Office", v: "Business Bay, Dubai, UAE" },
+              { icon: MessageCircle, label: "WhatsApp", v: "+971 55 310 4053", href: "https://wa.me/971553104053" },
+              { icon: Phone, label: "Phone", v: "+971 55 310 4053", href: "tel:+971553104053" },
+              { icon: Mail, label: "Email", v: "skywalkerconsultants@gmail.com", href: "mailto:skywalkerconsultants@gmail.com" },
+              { icon: MapPin, label: "Office", v: "SRTIP Free Zone, Block C, Office C-170, Sharjah, UAE" },
               { icon: Clock, label: "Hours", v: "Mon — Sat, 9:00 — 18:00" },
             ].map(({ icon: Icon, label, v, href }) => (
               <a key={label} href={href ?? "#"} className="flex items-start gap-4 rounded-2xl border border-border bg-card p-5 card-hover">
