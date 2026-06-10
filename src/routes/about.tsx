@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { PageHero, PageCTA } from "@/components/PagePieces";
 import founderImg from "@/assets/founder.jpg";
+import dubaiArt from "@/assets/dubai-art.jpg";
 import { Target, Eye, Heart } from "lucide-react";
 
 export const Route = createFileRoute("/about")({
@@ -54,6 +55,21 @@ function AboutPage() {
               <p className="mt-2 text-muted-foreground">{d}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="container mx-auto max-w-6xl px-5 lg:px-8">
+          <div className="relative overflow-hidden rounded-3xl shadow-card">
+            <img src={dubaiArt} alt="Dubai skyline at golden hour" loading="lazy" width={1600} height={900}
+              className="w-full h-[280px] sm:h-[360px] object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.15_0_0)]/70 to-transparent" />
+            <div className="absolute inset-0 flex items-center p-8 sm:p-12">
+              <h2 className="font-display font-bold text-2xl sm:text-3xl text-white max-w-md drop-shadow-lg">
+                Proudly serving ambitious businesses across the UAE.
+              </h2>
+            </div>
+          </div>
         </div>
       </section>
 

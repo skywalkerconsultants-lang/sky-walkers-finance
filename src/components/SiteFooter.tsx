@@ -31,9 +31,11 @@ export function SiteFooter() {
         <div>
           <div className="font-display font-semibold text-white mb-4">Contact</div>
           <ul className="space-y-2 text-sm text-white/70">
-            <li>Dubai, United Arab Emirates</li>
-            <li>hello@skywalkers.ae</li>
-            <li>+971 50 000 0000</li>
+            <li>Sky Walkers Consultancy</li>
+            <li>Sharjah Research Technology & Innovation Park (SRTIP) Free Zone</li>
+            <li>Block C, Office C-170, Sharjah, UAE</li>
+            <li><a href="tel:+971553104053" className="hover:text-primary">+971 55 310 4053</a></li>
+            <li><a href="mailto:skywalkerconsultants@gmail.com" className="hover:text-primary">skywalkerconsultants@gmail.com</a></li>
           </ul>
         </div>
       </div>

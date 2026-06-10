@@ -56,7 +56,7 @@ export function SiteHeader() {
 
         <div className="hidden lg:flex items-center gap-3">
           <a
-            href="https://wa.me/971500000000"
+            href="https://wa.me/971553104053"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-5 py-2.5 text-sm font-semibold shadow-glow hover:opacity-90 transition-smooth"
@@ -88,7 +88,7 @@ export function SiteHeader() {
               </Link>
             ))}
             <a
-              href="https://wa.me/971500000000"
+              href="https://wa.me/971553104053"
               target="_blank"
               rel="noreferrer"
               className="mt-2 text-center rounded-full bg-primary text-primary-foreground px-5 py-3 font-semibold"

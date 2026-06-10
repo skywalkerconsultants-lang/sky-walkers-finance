@@ -9,6 +9,7 @@ import {
   ArrowRight, Eraser, BarChart3, Briefcase,
   Rocket, ShoppingBag, Truck, Globe2, Megaphone, Cloud, Stethoscope,
   Utensils, Home as HomeIcon, Store, FileText, ShieldCheck,
+  CheckCircle2, BadgePercent,
 } from "lucide-react";
 import dubaiHero from "@/assets/dubai-hero.jpg";
 import logo from "@/assets/skywalker-logo.png.asset.json";
@@ -37,16 +38,34 @@ const stats = [
   { end: 4, suffix: "+", label: "Accounting Platforms" },
 ];
 
-const services = [
-  { icon: Calculator, title: "Accounting & Bookkeeping", desc: "Accurate daily books, reconciliations and monthly reporting.", to: "/accounting" },
-  { icon: Eraser, title: "Book Cleanup & Catch-Up", desc: "Organize, reconcile and rebuild accurate financial records.", to: "/book-cleanup" },
-  { icon: Receipt, title: "VAT Filing Services", desc: "Registration, returns and full UAE VAT compliance.", to: "/vat" },
-  { icon: FileCheck2, title: "Corporate Tax Filing", desc: "Registration, assessment, filing and CT compliance.", to: "/corporate-tax" },
-  { icon: Users2, title: "Payroll & WPS", desc: "End-to-end payroll processing and WPS management.", to: "/services" },
-  { icon: BarChart3, title: "Management Reporting", desc: "P&L, cash flow, KPI dashboards and analysis.", to: "/management-reporting" },
-  { icon: LineChart, title: "Virtual CFO Services", desc: "Budgeting, forecasting and strategic financial planning.", to: "/services" },
-  { icon: Building2, title: "Business Setup Advisory", desc: "Mainland and free zone company formation guidance.", to: "/services" },
-  { icon: Briefcase, title: "CPA Firm Support", desc: "Offshore bookkeeping, cleanup and month-end close support.", to: "/services" },
+const mainServices = [
+  {
+    icon: Calculator, title: "Accounting & Bookkeeping", to: "/accounting",
+    desc: "Accurate daily books, reconciliations and clear monthly reporting — the foundation of every compliant business.",
+  },
+  {
+    icon: Receipt, title: "VAT Filing Services", to: "/vat",
+    desc: "Registration, periodic returns and full UAE VAT compliance handled end-to-end, on time, every time.",
+  },
+  {
+    icon: FileCheck2, title: "Corporate Tax Filing", to: "/corporate-tax",
+    desc: "Registration, assessment, filing and ongoing corporate tax compliance aligned with FTA requirements.",
+  },
+];
+
+const moreServices = [
+  { icon: Eraser, title: "Book Cleanup & Catch-Up", points: ["Backlog & catch-up bookkeeping", "Account reconciliations", "Record rebuild & corrections"] },
+  { icon: Users2, title: "Payroll & WPS", points: ["Monthly payroll processing", "WPS-compliant disbursement", "Payslips & leave records"] },
+  { icon: BarChart3, title: "Management Reporting", points: ["P&L, balance sheet & cash flow", "KPI dashboards", "Monthly performance reviews"] },
+  { icon: LineChart, title: "Virtual CFO Services", points: ["Budgeting & forecasting", "Cash flow planning", "Financial strategy"] },
+  { icon: Building2, title: "Business Setup Advisory", points: ["Mainland & free zone setup", "Licensing guidance", "Structuring advice"] },
+  { icon: Briefcase, title: "CPA Firm Support", points: ["Offshore bookkeeping", "Cleanup projects", "Month-end close support"] },
+];
+
+const trustStrip = [
+  "QuickBooks", "Zoho Books", "Xero", "Tally", "UAE Compliance",
+  "Financial Reporting", "Tax Advisory", "VAT Filing", "Corporate Tax",
+  "Payroll & WPS", "Free Zone Setup", "Management Reporting",
 ];
 
 const steps = [
@@ -73,10 +92,10 @@ const industries = [
 ];
 
 const caseStudies = [
-  { tag: "Ecommerce Business", text: "Reduced month-end closing time by 60% while improving VAT and corporate tax compliance." },
-  { tag: "Digital Marketing Agency", text: "Implemented accounting workflows and management reporting to support faster decision-making." },
-  { tag: "UK-Based Trust Client", text: "Cleaned and reclassified over 3,000 accounting entries while maintaining bookkeeping support for 6+ years." },
-  { tag: "SaaS Business", text: "Developed KPI dashboards and management reports that improved business visibility and financial planning." },
+  { tag: "Featured — Cost Reduction", text: "We took on a client who was paying over AED 25,000 and reduced their cost to roughly 1/10th — without compromising on quality or scope of services.", featured: true },
+  { tag: "Ecommerce Business", text: "Reduced month-end closing time by 60% while improving VAT and corporate tax compliance.", featured: false },
+  { tag: "Digital Marketing Agency", text: "Implemented accounting workflows and management reporting to support faster decision-making.", featured: false },
+  { tag: "UK-Based Trust Client", text: "Cleaned and reclassified over 3,000 accounting entries while maintaining bookkeeping support for 6+ years.", featured: false },
 ];
 
 const software = ["QuickBooks", "Zoho Books", "Xero", "Tally", "Excel Financial Models", "Power BI Reporting"];
@@ -111,14 +130,14 @@ const trustBadges = [
 function Home() {
   return (
     <SiteLayout>
-      {/* SECTION 1 — HERO */}
+      {/* SECTION 1 — HERO (Glass logo orbit) */}
       <section className="relative pt-28 pb-20 lg:pt-36 lg:pb-32 text-white overflow-hidden">
-        {/* Dubai skyline background, blurred */}
+        {/* Dubai skyline background — more visible, lighter blur */}
         <div className="absolute inset-0">
           <img src={dubaiHero} alt="Dubai skyline" width={1920} height={1080}
-            className="w-full h-full object-cover scale-110 blur-[6px]" />
-          <div className="absolute inset-0 bg-[oklch(0.15_0_0)]/80" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.12_0_0)]/90 via-[oklch(0.15_0_0)]/70 to-transparent" />
+            className="w-full h-full object-cover scale-105 blur-[2px]" />
+          <div className="absolute inset-0 bg-[oklch(0.15_0_0)]/55" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.12_0_0)]/85 via-[oklch(0.15_0_0)]/45 to-transparent" />
         </div>
         <div className="container mx-auto max-w-7xl px-5 lg:px-8 relative grid lg:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-up">
@@ -129,7 +148,7 @@ function Home() {
             <h1 className="mt-6 font-display font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight drop-shadow-lg">
               Smart Accounting, Tax & <span className="text-primary">Financial Reporting</span> Solutions for Growing Businesses
             </h1>
-            <p className="mt-6 text-lg text-white/80 max-w-xl leading-relaxed">
+            <p className="mt-6 text-lg text-white/90 max-w-xl leading-relaxed drop-shadow">
               Helping UAE businesses, startups, free zone companies and CPA firms stay compliant, organized
               and growth-ready through accounting, VAT filing, corporate tax, payroll, book cleanup and
               management reporting services.
@@ -137,7 +156,7 @@ function Home() {
             <div className="mt-8">
               <CtaButtons light />
             </div>
-            <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs text-white/80">
+            <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs text-white/90">
               {trustBadges.map((t) => (
                 <div key={t} className="flex items-start gap-2">
                   <span className="mt-1 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
@@ -146,15 +165,57 @@ function Home() {
               ))}
             </div>
           </div>
-          <div className="relative animate-fade-up flex justify-center">
-            <div className="absolute -inset-6 bg-gradient-primary opacity-25 blur-3xl rounded-3xl" />
-            <div className="relative w-full max-w-md rounded-3xl bg-white border border-white/20 shadow-glow p-10 sm:p-14">
+          <div className="relative flex justify-center items-center min-h-[340px] animate-fade-up">
+            {/* Orbiting glow rings */}
+            <div className="absolute w-[360px] h-[360px] rounded-full border border-primary/30 animate-spin-slow">
+              <span className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary shadow-glow" />
+            </div>
+            <div className="absolute w-[280px] h-[280px] rounded-full border border-white/20 animate-spin-rev">
+              <span className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-white/80" />
+            </div>
+            <div className="absolute w-72 h-72 bg-gradient-primary opacity-30 blur-3xl rounded-full" />
+            {/* Floating frosted-glass logo card */}
+            <div className="relative animate-float-soft w-full max-w-sm rounded-3xl bg-white/95 backdrop-blur border border-white/40 shadow-glow p-10 sm:p-12">
               <img src={logo.url} alt="Sky Walkers Consultancy logo" width={660} height={372}
                 className="w-full h-auto" />
             </div>
           </div>
         </div>
       </section>
+
+      {/* SECTION 1B — ANIMATED TRUST STRIP */}
+      <section className="border-y border-border bg-accent/40 py-5 overflow-hidden">
+        <div className="relative flex">
+          <div className="marquee gap-10 pr-10">
+            {[...trustStrip, ...trustStrip].map((t, i) => (
+              <span key={i} className="inline-flex items-center gap-2 text-sm font-display font-semibold text-foreground/70 whitespace-nowrap">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                {t}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 1C — PRICE BANNER */}
+      <section className="py-6">
+        <div className="container mx-auto max-w-7xl px-5 lg:px-8">
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-primary text-primary-foreground px-6 sm:px-10 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-glow">
+            <div className="flex items-center gap-3 text-center sm:text-left">
+              <BadgePercent className="w-8 h-8 shrink-0" />
+              <div>
+                <div className="font-display font-bold text-xl sm:text-2xl">Services starting from a minimum of AED 99.00</div>
+                <div className="text-sm text-primary-foreground/90">Best services at the lowest price in Dubai for small & medium businesses.</div>
+              </div>
+            </div>
+            <a href="https://wa.me/971553104053" target="_blank" rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-white text-foreground px-6 py-3 text-sm font-semibold hover:opacity-90 transition-smooth whitespace-nowrap">
+              Get a quote <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+      </section>
+
 
       {/* SECTION 2 — STATS */}
       <section className="py-20 border-b border-border">
@@ -185,21 +246,48 @@ function Home() {
             <span className="text-xs font-semibold tracking-[0.18em] uppercase text-primary">Services</span>
             <h2 className="mt-3 font-display font-bold text-3xl sm:text-4xl lg:text-5xl">End-to-End Financial Solutions</h2>
             <p className="mt-4 text-muted-foreground text-lg">
-              From day-to-day bookkeeping to corporate tax and CFO-level reporting — one trusted partner for it all.
+              Three core services we deliver best — backed by a full suite of supporting solutions for UAE businesses.
             </p>
           </Reveal>
+
+          {/* 3 MAIN SERVICES */}
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {services.map(({ icon: Icon, title, desc, to }, i) => (
+            {mainServices.map(({ icon: Icon, title, desc, to }, i) => (
               <Reveal key={title} delay={i * 50}>
-                <div className="card-hover group h-full rounded-2xl border border-border bg-card p-7 shadow-card flex flex-col">
+                <a href={to} className="card-hover group h-full block rounded-2xl border border-border bg-card p-8 shadow-card">
                   <div className="inline-flex w-12 h-12 items-center justify-center rounded-xl bg-accent text-primary group-hover:bg-gradient-primary group-hover:text-primary-foreground transition-smooth">
                     <Icon className="w-6 h-6" />
                   </div>
                   <h3 className="mt-5 font-display font-semibold text-xl">{title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed flex-1">{desc}</p>
-                  <a href={to} className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{desc}</p>
+                  <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
                     Learn More <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </a>
+                  </span>
+                </a>
+              </Reveal>
+            ))}
+          </div>
+
+          {/* MORE SERVICES — with data instead of "learn more" */}
+          <Reveal className="mt-16 mb-6">
+            <h3 className="font-display font-bold text-2xl">More services we provide</h3>
+          </Reveal>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {moreServices.map(({ icon: Icon, title, points }, i) => (
+              <Reveal key={title} delay={i * 50}>
+                <div className="card-hover h-full rounded-2xl border border-border bg-card p-7 shadow-card flex flex-col">
+                  <div className="inline-flex w-12 h-12 items-center justify-center rounded-xl bg-accent text-primary">
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <h4 className="mt-5 font-display font-semibold text-lg">{title}</h4>
+                  <ul className="mt-3 space-y-2">
+                    {points.map((p) => (
+                      <li key={p} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                        <span>{p}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </Reveal>
             ))}
@@ -257,17 +345,21 @@ function Home() {
       <section className="py-24 bg-accent/50">
         <div className="container mx-auto max-w-7xl px-5 lg:px-8">
           <Reveal className="max-w-2xl">
-            <span className="text-xs font-semibold tracking-[0.18em] uppercase text-primary">Success stories</span>
-            <h2 className="mt-3 font-display font-bold text-3xl sm:text-4xl lg:text-5xl">Real results for real businesses</h2>
+            <span className="text-xs font-semibold tracking-[0.18em] uppercase text-primary">Real business results</span>
+            <h2 className="mt-3 font-display font-bold text-3xl sm:text-4xl lg:text-5xl">Best services at the lowest price in Dubai</h2>
+            <p className="mt-4 text-muted-foreground text-lg">
+              We prioritise the key services we deliver best — giving small and medium businesses premium quality
+              at the lowest price in Dubai.
+            </p>
           </Reveal>
           <div className="mt-12 grid sm:grid-cols-2 gap-5">
             {caseStudies.map((c, i) => (
               <Reveal key={c.tag} delay={i * 70}>
-                <div className="card-hover h-full rounded-2xl border border-border bg-card p-8 shadow-card">
-                  <span className="inline-flex items-center gap-2 rounded-full bg-accent px-3 py-1 text-xs font-semibold text-primary uppercase tracking-wider">
+                <div className={`card-hover h-full rounded-2xl border p-8 shadow-card ${c.featured ? "sm:col-span-2 border-primary/40 bg-gradient-primary text-primary-foreground" : "border-border bg-card"}`}>
+                  <span className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider ${c.featured ? "bg-white/20 text-primary-foreground" : "bg-accent text-primary"}`}>
                     {c.tag}
                   </span>
-                  <p className="mt-4 text-lg leading-relaxed text-foreground/80">{c.text}</p>
+                  <p className={`mt-4 leading-relaxed ${c.featured ? "text-xl sm:text-2xl font-display font-semibold" : "text-lg text-foreground/80"}`}>{c.text}</p>
                 </div>
               </Reveal>
             ))}
