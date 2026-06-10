@@ -93,9 +93,9 @@ const industries = [
 
 const caseStudies = [
   { tag: "Featured — Cost Reduction", text: "We took on a client who was paying over AED 25,000 and reduced their cost to roughly 1/10th — without compromising on quality or scope of services.", featured: true },
-  { tag: "Ecommerce Business", text: "Reduced month-end closing time by 60% while improving VAT and corporate tax compliance." },
-  { tag: "Digital Marketing Agency", text: "Implemented accounting workflows and management reporting to support faster decision-making." },
-  { tag: "UK-Based Trust Client", text: "Cleaned and reclassified over 3,000 accounting entries while maintaining bookkeeping support for 6+ years." },
+  { tag: "Ecommerce Business", text: "Reduced month-end closing time by 60% while improving VAT and corporate tax compliance.", featured: false },
+  { tag: "Digital Marketing Agency", text: "Implemented accounting workflows and management reporting to support faster decision-making.", featured: false },
+  { tag: "UK-Based Trust Client", text: "Cleaned and reclassified over 3,000 accounting entries while maintaining bookkeeping support for 6+ years.", featured: false },
 ];
 
 const software = ["QuickBooks", "Zoho Books", "Xero", "Tally", "Excel Financial Models", "Power BI Reporting"];
