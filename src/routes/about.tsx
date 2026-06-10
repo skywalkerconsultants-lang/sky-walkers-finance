@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { PageHero, PageCTA } from "@/components/PagePieces";
 import founderImg from "@/assets/founder.jpg";
+import dubaiArt from "@/assets/dubai-art.jpg";
 import { Target, Eye, Heart } from "lucide-react";
 
 export const Route = createFileRoute("/about")({
