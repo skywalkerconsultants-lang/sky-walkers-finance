@@ -246,21 +246,48 @@ function Home() {
             <span className="text-xs font-semibold tracking-[0.18em] uppercase text-primary">Services</span>
             <h2 className="mt-3 font-display font-bold text-3xl sm:text-4xl lg:text-5xl">End-to-End Financial Solutions</h2>
             <p className="mt-4 text-muted-foreground text-lg">
-              From day-to-day bookkeeping to corporate tax and CFO-level reporting — one trusted partner for it all.
+              Three core services we deliver best — backed by a full suite of supporting solutions for UAE businesses.
             </p>
           </Reveal>
+
+          {/* 3 MAIN SERVICES */}
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {services.map(({ icon: Icon, title, desc, to }, i) => (
+            {mainServices.map(({ icon: Icon, title, desc, to }, i) => (
               <Reveal key={title} delay={i * 50}>
-                <div className="card-hover group h-full rounded-2xl border border-border bg-card p-7 shadow-card flex flex-col">
+                <a href={to} className="card-hover group h-full block rounded-2xl border border-border bg-card p-8 shadow-card">
                   <div className="inline-flex w-12 h-12 items-center justify-center rounded-xl bg-accent text-primary group-hover:bg-gradient-primary group-hover:text-primary-foreground transition-smooth">
                     <Icon className="w-6 h-6" />
                   </div>
                   <h3 className="mt-5 font-display font-semibold text-xl">{title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed flex-1">{desc}</p>
-                  <a href={to} className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{desc}</p>
+                  <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
                     Learn More <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </a>
+                  </span>
+                </a>
+              </Reveal>
+            ))}
+          </div>
+
+          {/* MORE SERVICES — with data instead of "learn more" */}
+          <Reveal className="mt-16 mb-6">
+            <h3 className="font-display font-bold text-2xl">More services we provide</h3>
+          </Reveal>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {moreServices.map(({ icon: Icon, title, points }, i) => (
+              <Reveal key={title} delay={i * 50}>
+                <div className="card-hover h-full rounded-2xl border border-border bg-card p-7 shadow-card flex flex-col">
+                  <div className="inline-flex w-12 h-12 items-center justify-center rounded-xl bg-accent text-primary">
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <h4 className="mt-5 font-display font-semibold text-lg">{title}</h4>
+                  <ul className="mt-3 space-y-2">
+                    {points.map((p) => (
+                      <li key={p} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                        <span>{p}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </Reveal>
             ))}
