@@ -52,6 +52,21 @@ function IndustriesPage() {
         </div>
       </section>
 
+      <section className="pb-8">
+        <div className="container mx-auto max-w-7xl px-5 lg:px-8">
+          <div className="relative overflow-hidden rounded-3xl shadow-card">
+            <img src={dubaiArt} alt="Dubai skyline at golden hour" loading="lazy" width={1600} height={900}
+              className="w-full h-[240px] sm:h-[320px] object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.15_0_0)]/70 to-transparent" />
+            <div className="absolute inset-0 flex items-center p-8 sm:p-12">
+              <h2 className="font-display font-bold text-2xl sm:text-3xl text-white max-w-md drop-shadow-lg">
+                Local expertise across every Emirate.
+              </h2>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <PageCTA title="Not sure which fits?" subtitle="Tell us about your business — we'll recommend the right setup." />
     </SiteLayout>
   );
