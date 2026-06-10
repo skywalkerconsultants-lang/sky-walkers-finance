@@ -9,6 +9,7 @@ import {
   ArrowRight, Eraser, BarChart3, Briefcase,
   Rocket, ShoppingBag, Truck, Globe2, Megaphone, Cloud, Stethoscope,
   Utensils, Home as HomeIcon, Store, FileText, ShieldCheck,
+  CheckCircle2, BadgePercent,
 } from "lucide-react";
 import dubaiHero from "@/assets/dubai-hero.jpg";
 import logo from "@/assets/skywalker-logo.png.asset.json";
