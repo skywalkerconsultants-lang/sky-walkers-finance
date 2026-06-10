@@ -130,14 +130,14 @@ const trustBadges = [
 function Home() {
   return (
     <SiteLayout>
-      {/* SECTION 1 — HERO */}
+      {/* SECTION 1 — HERO (Glass logo orbit) */}
       <section className="relative pt-28 pb-20 lg:pt-36 lg:pb-32 text-white overflow-hidden">
-        {/* Dubai skyline background, blurred */}
+        {/* Dubai skyline background — more visible, lighter blur */}
         <div className="absolute inset-0">
           <img src={dubaiHero} alt="Dubai skyline" width={1920} height={1080}
-            className="w-full h-full object-cover scale-110 blur-[6px]" />
-          <div className="absolute inset-0 bg-[oklch(0.15_0_0)]/80" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.12_0_0)]/90 via-[oklch(0.15_0_0)]/70 to-transparent" />
+            className="w-full h-full object-cover scale-105 blur-[2px]" />
+          <div className="absolute inset-0 bg-[oklch(0.15_0_0)]/55" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.12_0_0)]/85 via-[oklch(0.15_0_0)]/45 to-transparent" />
         </div>
         <div className="container mx-auto max-w-7xl px-5 lg:px-8 relative grid lg:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-up">
@@ -148,7 +148,7 @@ function Home() {
             <h1 className="mt-6 font-display font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight drop-shadow-lg">
               Smart Accounting, Tax & <span className="text-primary">Financial Reporting</span> Solutions for Growing Businesses
             </h1>
-            <p className="mt-6 text-lg text-white/80 max-w-xl leading-relaxed">
+            <p className="mt-6 text-lg text-white/90 max-w-xl leading-relaxed drop-shadow">
               Helping UAE businesses, startups, free zone companies and CPA firms stay compliant, organized
               and growth-ready through accounting, VAT filing, corporate tax, payroll, book cleanup and
               management reporting services.
@@ -156,7 +156,7 @@ function Home() {
             <div className="mt-8">
               <CtaButtons light />
             </div>
-            <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs text-white/80">
+            <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs text-white/90">
               {trustBadges.map((t) => (
                 <div key={t} className="flex items-start gap-2">
                   <span className="mt-1 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
@@ -165,15 +165,57 @@ function Home() {
               ))}
             </div>
           </div>
-          <div className="relative animate-fade-up flex justify-center">
-            <div className="absolute -inset-6 bg-gradient-primary opacity-25 blur-3xl rounded-3xl" />
-            <div className="relative w-full max-w-md rounded-3xl bg-white border border-white/20 shadow-glow p-10 sm:p-14">
+          <div className="relative flex justify-center items-center min-h-[340px] animate-fade-up">
+            {/* Orbiting glow rings */}
+            <div className="absolute w-[360px] h-[360px] rounded-full border border-primary/30 animate-spin-slow">
+              <span className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary shadow-glow" />
+            </div>
+            <div className="absolute w-[280px] h-[280px] rounded-full border border-white/20 animate-spin-rev">
+              <span className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-white/80" />
+            </div>
+            <div className="absolute w-72 h-72 bg-gradient-primary opacity-30 blur-3xl rounded-full" />
+            {/* Floating frosted-glass logo card */}
+            <div className="relative animate-float-soft w-full max-w-sm rounded-3xl bg-white/95 backdrop-blur border border-white/40 shadow-glow p-10 sm:p-12">
               <img src={logo.url} alt="Sky Walkers Consultancy logo" width={660} height={372}
                 className="w-full h-auto" />
             </div>
           </div>
         </div>
       </section>
+
+      {/* SECTION 1B — ANIMATED TRUST STRIP */}
+      <section className="border-y border-border bg-accent/40 py-5 overflow-hidden">
+        <div className="relative flex">
+          <div className="marquee gap-10 pr-10">
+            {[...trustStrip, ...trustStrip].map((t, i) => (
+              <span key={i} className="inline-flex items-center gap-2 text-sm font-display font-semibold text-foreground/70 whitespace-nowrap">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                {t}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 1C — PRICE BANNER */}
+      <section className="py-6">
+        <div className="container mx-auto max-w-7xl px-5 lg:px-8">
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-primary text-primary-foreground px-6 sm:px-10 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-glow">
+            <div className="flex items-center gap-3 text-center sm:text-left">
+              <BadgePercent className="w-8 h-8 shrink-0" />
+              <div>
+                <div className="font-display font-bold text-xl sm:text-2xl">Services starting from a minimum of AED 99.00</div>
+                <div className="text-sm text-primary-foreground/90">Best services at the lowest price in Dubai for small & medium businesses.</div>
+              </div>
+            </div>
+            <a href="https://wa.me/971553104053" target="_blank" rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-white text-foreground px-6 py-3 text-sm font-semibold hover:opacity-90 transition-smooth whitespace-nowrap">
+              Get a quote <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+      </section>
+
 
       {/* SECTION 2 — STATS */}
       <section className="py-20 border-b border-border">
