@@ -75,7 +75,7 @@ function ContactPage() {
           <div className="rounded-3xl overflow-hidden border border-border shadow-card">
             <iframe
               title="Office location"
-              src="https://www.google.com/maps?q=Business+Bay+Dubai&output=embed"
+              src="https://www.google.com/maps?q=Sharjah+Research+Technology+Innovation+Park+SRTIP&output=embed"
               className="w-full h-[380px] border-0"
               loading="lazy"
             />
