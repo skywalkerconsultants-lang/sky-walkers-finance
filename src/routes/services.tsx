@@ -20,6 +20,21 @@ export const Route = createFileRoute("/services")({
       { name: "twitter:image", content: ogServices.url },
     ],
     links: [{ rel: "canonical", href: "/services" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: "Accounting & Tax Services — Sky Walkers Consultancy",
+          itemListElement: [
+            "Accounting & Bookkeeping", "Book Cleanup & Catch-Up Accounting", "VAT Filing Services",
+            "Corporate Tax Filing", "Payroll & WPS", "Management Reporting",
+            "Virtual CFO Services", "Business Setup Advisory", "CPA Firm Support",
+          ].map((name, i) => ({ "@type": "ListItem", position: i + 1, name })),
+        }),
+      },
+    ],
   }),
   component: ServicesPage,
 });
