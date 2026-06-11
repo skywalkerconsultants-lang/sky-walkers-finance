@@ -17,6 +17,19 @@ export const Route = createFileRoute("/resources")({
       { name: "twitter:image", content: ogResources.url },
     ],
     links: [{ rel: "canonical", href: "/resources" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: "UAE Tax, VAT, Accounting & Reporting Resources",
+          description:
+            "Curated explainers and official UAE links on corporate tax, VAT filing, accounting, financial reporting, business setup and CPA support.",
+          about: ["UAE Corporate Tax", "UAE VAT", "Accounting", "Financial Reporting", "Business Setup", "CPA Support"],
+        }),
+      },
+    ],
   }),
   component: ResourcesPage,
 });
@@ -41,10 +54,10 @@ const articles: Resource[] = [
     desc: "EmaraTax is the FTA's online platform where every taxable person registers for and files corporate tax. Use it to create your profile, submit registration, and manage returns and payments.",
   },
   {
-    title: "Small Business Relief Guidance",
+    title: "Small Business Relief — FTA Decisions",
     cat: "Corporate Tax",
     url: "https://tax.gov.ae/en/legislation.and.cabinet.decisions.aspx",
-    desc: "FTA decisions and guides explaining Small Business Relief, which lets qualifying businesses with revenue under the threshold elect to be treated as having no taxable income for a tax period.",
+    desc: "Official FTA legislation and cabinet decisions, including Small Business Relief which lets qualifying businesses under the revenue threshold elect to be treated as having no taxable income for a tax period.",
   },
   {
     title: "UAE VAT — Official FTA Portal",
@@ -62,25 +75,13 @@ const articles: Resource[] = [
     title: "Accounting Records & Bookkeeping Requirements",
     cat: "Accounting",
     url: "https://tax.gov.ae/en/legislation.and.cabinet.decisions.aspx",
-    desc: "What records UAE businesses must keep and for how long. Accurate, reconciled books are the foundation for both VAT and corporate tax compliance — and for clean management reporting.",
+    desc: "What records UAE businesses must keep and for how long, per FTA legislation. Accurate, reconciled books are the foundation for both VAT and corporate tax compliance — and for clean management reporting.",
   },
   {
-    title: "Choosing the Right Accounting Software",
-    cat: "Accounting",
-    url: "https://quickbooks.intuit.com/global/",
-    desc: "A look at cloud accounting platforms (QuickBooks, Zoho Books, Xero, Tally) and how to pick the stack that fits your transaction volume, industry and reporting needs.",
-  },
-  {
-    title: "Why Monthly Financial Reporting Matters",
+    title: "IFRS Accounting Standards (Official List)",
     cat: "Financial Reporting",
     url: "https://www.ifrs.org/issued-standards/list-of-standards/",
-    desc: "Monthly P&L, balance sheet and cash flow reporting under IFRS gives founders real-time visibility. This reference links to the official list of IFRS standards used across the UAE.",
-  },
-  {
-    title: "Financial KPIs Every Business Should Track",
-    cat: "Financial Reporting",
-    url: "https://www.ifrs.org/issued-standards/list-of-standards/",
-    desc: "Gross margin, burn rate, runway, working capital and cash conversion — the dashboard metrics that turn bookkeeping into decisions. Built on IFRS-aligned financial statements.",
+    desc: "The official list of issued IFRS Accounting Standards used across the UAE. The framework behind your P&L, balance sheet and cash flow — and the basis for credible, comparable financial reporting.",
   },
   {
     title: "Setting Up a Business in the UAE",
@@ -97,8 +98,8 @@ const articles: Resource[] = [
   {
     title: "Offshore Accounting Support for CPA Firms",
     cat: "CPA Support",
-    url: "/contact",
-    desc: "How CPA and accounting firms use our offshore team for bookkeeping, cleanup projects, month-end close and reporting support. Talk to us about a scalable engagement model.",
+    url: "/cpa-support",
+    desc: "How CPA and accounting firms use our offshore team for bookkeeping, cleanup projects, month-end close and reporting support. Explore our scalable engagement models.",
   },
 ];
 
@@ -137,14 +138,15 @@ function ResourcesPage() {
                     href={p.url}
                     target={external ? "_blank" : undefined}
                     rel={external ? "noreferrer" : undefined}
-                    className="card-hover group h-full block rounded-2xl border border-border bg-card p-7"
+                    className="card-hover group relative h-full block overflow-hidden rounded-2xl border border-border bg-card p-7"
                   >
-                    <div className="text-xs text-primary font-semibold uppercase tracking-wider">{p.cat}</div>
+                    <span className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-gradient-primary transition-transform duration-300 group-hover:scale-x-100" />
+                    <div className="inline-flex rounded-full bg-accent px-3 py-1 text-xs text-primary font-semibold uppercase tracking-wider transition-colors group-hover:bg-primary group-hover:text-primary-foreground">{p.cat}</div>
                     <h3 className="mt-3 font-display font-semibold text-lg leading-snug">{p.title}</h3>
                     <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
                     <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-                      {external ? "Visit resource" : "Get in touch"}
-                      <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                      {external ? "Visit resource" : "Explore"}
+                      <ExternalLink className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </span>
                   </a>
                 </Reveal>

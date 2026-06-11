@@ -9,19 +9,28 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VirtualCfoRouteImport } from './routes/virtual-cfo'
 import { Route as VatRouteImport } from './routes/vat'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as PayrollRouteImport } from './routes/payroll'
 import { Route as ManagementReportingRouteImport } from './routes/management-reporting'
 import { Route as IndustriesRouteImport } from './routes/industries'
+import { Route as CpaSupportRouteImport } from './routes/cpa-support'
 import { Route as CorporateTaxRouteImport } from './routes/corporate-tax'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as BusinessSetupRouteImport } from './routes/business-setup'
 import { Route as BookCleanupRouteImport } from './routes/book-cleanup'
 import { Route as AccountingRouteImport } from './routes/accounting'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const VirtualCfoRoute = VirtualCfoRouteImport.update({
+  id: '/virtual-cfo',
+  path: '/virtual-cfo',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const VatRoute = VatRouteImport.update({
   id: '/vat',
   path: '/vat',
@@ -42,6 +51,11 @@ const ResourcesRoute = ResourcesRouteImport.update({
   path: '/resources',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PayrollRoute = PayrollRouteImport.update({
+  id: '/payroll',
+  path: '/payroll',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ManagementReportingRoute = ManagementReportingRouteImport.update({
   id: '/management-reporting',
   path: '/management-reporting',
@@ -52,6 +66,11 @@ const IndustriesRoute = IndustriesRouteImport.update({
   path: '/industries',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CpaSupportRoute = CpaSupportRouteImport.update({
+  id: '/cpa-support',
+  path: '/cpa-support',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CorporateTaxRoute = CorporateTaxRouteImport.update({
   id: '/corporate-tax',
   path: '/corporate-tax',
@@ -60,6 +79,11 @@ const CorporateTaxRoute = CorporateTaxRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BusinessSetupRoute = BusinessSetupRouteImport.update({
+  id: '/business-setup',
+  path: '/business-setup',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BookCleanupRoute = BookCleanupRouteImport.update({
@@ -88,28 +112,36 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/accounting': typeof AccountingRoute
   '/book-cleanup': typeof BookCleanupRoute
+  '/business-setup': typeof BusinessSetupRoute
   '/contact': typeof ContactRoute
   '/corporate-tax': typeof CorporateTaxRoute
+  '/cpa-support': typeof CpaSupportRoute
   '/industries': typeof IndustriesRoute
   '/management-reporting': typeof ManagementReportingRoute
+  '/payroll': typeof PayrollRoute
   '/resources': typeof ResourcesRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vat': typeof VatRoute
+  '/virtual-cfo': typeof VirtualCfoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/accounting': typeof AccountingRoute
   '/book-cleanup': typeof BookCleanupRoute
+  '/business-setup': typeof BusinessSetupRoute
   '/contact': typeof ContactRoute
   '/corporate-tax': typeof CorporateTaxRoute
+  '/cpa-support': typeof CpaSupportRoute
   '/industries': typeof IndustriesRoute
   '/management-reporting': typeof ManagementReportingRoute
+  '/payroll': typeof PayrollRoute
   '/resources': typeof ResourcesRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vat': typeof VatRoute
+  '/virtual-cfo': typeof VirtualCfoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -117,14 +149,18 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/accounting': typeof AccountingRoute
   '/book-cleanup': typeof BookCleanupRoute
+  '/business-setup': typeof BusinessSetupRoute
   '/contact': typeof ContactRoute
   '/corporate-tax': typeof CorporateTaxRoute
+  '/cpa-support': typeof CpaSupportRoute
   '/industries': typeof IndustriesRoute
   '/management-reporting': typeof ManagementReportingRoute
+  '/payroll': typeof PayrollRoute
   '/resources': typeof ResourcesRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vat': typeof VatRoute
+  '/virtual-cfo': typeof VirtualCfoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -133,42 +169,54 @@ export interface FileRouteTypes {
     | '/about'
     | '/accounting'
     | '/book-cleanup'
+    | '/business-setup'
     | '/contact'
     | '/corporate-tax'
+    | '/cpa-support'
     | '/industries'
     | '/management-reporting'
+    | '/payroll'
     | '/resources'
     | '/services'
     | '/sitemap.xml'
     | '/vat'
+    | '/virtual-cfo'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/accounting'
     | '/book-cleanup'
+    | '/business-setup'
     | '/contact'
     | '/corporate-tax'
+    | '/cpa-support'
     | '/industries'
     | '/management-reporting'
+    | '/payroll'
     | '/resources'
     | '/services'
     | '/sitemap.xml'
     | '/vat'
+    | '/virtual-cfo'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/accounting'
     | '/book-cleanup'
+    | '/business-setup'
     | '/contact'
     | '/corporate-tax'
+    | '/cpa-support'
     | '/industries'
     | '/management-reporting'
+    | '/payroll'
     | '/resources'
     | '/services'
     | '/sitemap.xml'
     | '/vat'
+    | '/virtual-cfo'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -176,18 +224,29 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   AccountingRoute: typeof AccountingRoute
   BookCleanupRoute: typeof BookCleanupRoute
+  BusinessSetupRoute: typeof BusinessSetupRoute
   ContactRoute: typeof ContactRoute
   CorporateTaxRoute: typeof CorporateTaxRoute
+  CpaSupportRoute: typeof CpaSupportRoute
   IndustriesRoute: typeof IndustriesRoute
   ManagementReportingRoute: typeof ManagementReportingRoute
+  PayrollRoute: typeof PayrollRoute
   ResourcesRoute: typeof ResourcesRoute
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   VatRoute: typeof VatRoute
+  VirtualCfoRoute: typeof VirtualCfoRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/virtual-cfo': {
+      id: '/virtual-cfo'
+      path: '/virtual-cfo'
+      fullPath: '/virtual-cfo'
+      preLoaderRoute: typeof VirtualCfoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/vat': {
       id: '/vat'
       path: '/vat'
@@ -216,6 +275,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResourcesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/payroll': {
+      id: '/payroll'
+      path: '/payroll'
+      fullPath: '/payroll'
+      preLoaderRoute: typeof PayrollRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/management-reporting': {
       id: '/management-reporting'
       path: '/management-reporting'
@@ -230,6 +296,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndustriesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cpa-support': {
+      id: '/cpa-support'
+      path: '/cpa-support'
+      fullPath: '/cpa-support'
+      preLoaderRoute: typeof CpaSupportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/corporate-tax': {
       id: '/corporate-tax'
       path: '/corporate-tax'
@@ -242,6 +315,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/business-setup': {
+      id: '/business-setup'
+      path: '/business-setup'
+      fullPath: '/business-setup'
+      preLoaderRoute: typeof BusinessSetupRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/book-cleanup': {
@@ -280,14 +360,18 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   AccountingRoute: AccountingRoute,
   BookCleanupRoute: BookCleanupRoute,
+  BusinessSetupRoute: BusinessSetupRoute,
   ContactRoute: ContactRoute,
   CorporateTaxRoute: CorporateTaxRoute,
+  CpaSupportRoute: CpaSupportRoute,
   IndustriesRoute: IndustriesRoute,
   ManagementReportingRoute: ManagementReportingRoute,
+  PayrollRoute: PayrollRoute,
   ResourcesRoute: ResourcesRoute,
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   VatRoute: VatRoute,
+  VirtualCfoRoute: VirtualCfoRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
