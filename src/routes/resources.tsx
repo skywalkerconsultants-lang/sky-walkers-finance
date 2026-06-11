@@ -138,14 +138,15 @@ function ResourcesPage() {
                     href={p.url}
                     target={external ? "_blank" : undefined}
                     rel={external ? "noreferrer" : undefined}
-                    className="card-hover group h-full block rounded-2xl border border-border bg-card p-7"
+                    className="card-hover group relative h-full block overflow-hidden rounded-2xl border border-border bg-card p-7"
                   >
-                    <div className="text-xs text-primary font-semibold uppercase tracking-wider">{p.cat}</div>
+                    <span className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-gradient-primary transition-transform duration-300 group-hover:scale-x-100" />
+                    <div className="inline-flex rounded-full bg-accent px-3 py-1 text-xs text-primary font-semibold uppercase tracking-wider transition-colors group-hover:bg-primary group-hover:text-primary-foreground">{p.cat}</div>
                     <h3 className="mt-3 font-display font-semibold text-lg leading-snug">{p.title}</h3>
                     <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
                     <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-                      {external ? "Visit resource" : "Get in touch"}
-                      <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                      {external ? "Visit resource" : "Explore"}
+                      <ExternalLink className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </span>
                   </a>
                 </Reveal>
