@@ -4,6 +4,7 @@ import { CtaButtons } from "@/components/PagePieces";
 import { CountUp } from "@/components/CountUp";
 import { Reveal } from "@/components/Reveal";
 import { FaqSection } from "@/components/FaqSection";
+import { SoftwareMarquee } from "@/components/SoftwareMarquee";
 import {
   Calculator, FileCheck2, Receipt, Users2, Building2, LineChart,
   ArrowRight, Eraser, BarChart3, Briefcase,
