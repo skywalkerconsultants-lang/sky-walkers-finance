@@ -35,7 +35,7 @@ function Badge({ name, mono, color }: Tool) {
 
 export function SoftwareMarquee() {
   return (
-    <section className="py-20 overflow-hidden">
+    <section className="relative py-20 overflow-hidden">
       <div className="container mx-auto max-w-7xl px-5 lg:px-8 text-center">
         <Reveal>
           <span className="text-xs font-semibold tracking-[0.18em] uppercase text-primary">Software expertise</span>
