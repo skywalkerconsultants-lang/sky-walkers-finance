@@ -99,7 +99,7 @@ const caseStudies = [
   { tag: "UK-Based Trust Client", text: "Cleaned and reclassified over 3,000 accounting entries while maintaining bookkeeping support for 6+ years.", featured: false },
 ];
 
-const software = ["QuickBooks", "Zoho Books", "Xero", "Tally", "Excel Financial Models", "Power BI Reporting"];
+
 
 const resources = [
   "UAE Corporate Tax Guide",
