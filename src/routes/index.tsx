@@ -368,23 +368,7 @@ function Home() {
       </section>
 
       {/* SECTION 7 — SOFTWARE */}
-      <section className="py-20">
-        <div className="container mx-auto max-w-7xl px-5 lg:px-8 text-center">
-          <Reveal>
-            <span className="text-xs font-semibold tracking-[0.18em] uppercase text-primary">Software expertise</span>
-            <h2 className="mt-3 font-display font-bold text-3xl sm:text-4xl">Tools we work with</h2>
-          </Reveal>
-          <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            {software.map((name, i) => (
-              <Reveal key={name} delay={i * 50}>
-                <div className="rounded-2xl border border-border bg-card py-8 font-display font-semibold text-lg card-hover">
-                  {name}
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <SoftwareMarquee />
 
       {/* SECTION 8 — FREE RESOURCES */}
       <section className="py-24 bg-[oklch(0.15_0_0)] text-white">
