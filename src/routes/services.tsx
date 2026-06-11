@@ -29,11 +29,11 @@ const services = [
   { icon: Eraser, title: "Book Cleanup & Catch-Up Accounting", desc: "Organize, reconcile and rebuild accurate records.", to: "/book-cleanup" },
   { icon: Receipt, title: "VAT Filing Services", desc: "Registration, returns and full UAE VAT compliance.", to: "/vat" },
   { icon: FileCheck2, title: "Corporate Tax Filing", desc: "Registration, assessment, filing and compliance.", to: "/corporate-tax" },
-  { icon: Users2, title: "Payroll & WPS", desc: "End-to-end payroll and WPS-compliant disbursement.", to: "/services" },
+  { icon: Users2, title: "Payroll & WPS", desc: "End-to-end payroll and WPS-compliant disbursement.", to: "/payroll" },
   { icon: BarChart3, title: "Management Reporting", desc: "P&L, cash flow, KPI dashboards and analysis.", to: "/management-reporting" },
-  { icon: LineChart, title: "Virtual CFO Services", desc: "Budgeting, forecasting and financial strategy.", to: "/services" },
-  { icon: Building2, title: "Business Setup Advisory", desc: "Mainland and free zone formation guidance.", to: "/services" },
-  { icon: Briefcase, title: "CPA Firm Support", desc: "Offshore bookkeeping, cleanup and close support.", to: "/services" },
+  { icon: LineChart, title: "Virtual CFO Services", desc: "Budgeting, forecasting and financial strategy.", to: "/virtual-cfo" },
+  { icon: Building2, title: "Business Setup Advisory", desc: "Mainland and free zone formation guidance.", to: "/business-setup" },
+  { icon: Briefcase, title: "CPA Firm Support", desc: "Offshore bookkeeping, cleanup and close support.", to: "/cpa-support" },
 ];
 
 function ServicesPage() {
