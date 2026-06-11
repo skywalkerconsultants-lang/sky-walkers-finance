@@ -149,6 +149,25 @@
     to { transform: translateX(-50%); }
   }
 
+  .marquee-reverse {
+    display: flex;
+    width: max-content;
+    animation: marquee-reverse 38s linear infinite;
+  }
+  @keyframes marquee-reverse {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+  }
+
+  .marquee-pause:hover .marquee,
+  .marquee-pause:hover .marquee-reverse {
+    animation-play-state: paused;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee, .marquee-reverse { animation: none; }
+  }
+
   @keyframes fade-up {
     from { opacity: 0; transform: translateY(16px); }
     to { opacity: 1; transform: translateY(0); }
