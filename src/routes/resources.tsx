@@ -17,6 +17,19 @@ export const Route = createFileRoute("/resources")({
       { name: "twitter:image", content: ogResources.url },
     ],
     links: [{ rel: "canonical", href: "/resources" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: "UAE Tax, VAT, Accounting & Reporting Resources",
+          description:
+            "Curated explainers and official UAE links on corporate tax, VAT filing, accounting, financial reporting, business setup and CPA support.",
+          about: ["UAE Corporate Tax", "UAE VAT", "Accounting", "Financial Reporting", "Business Setup", "CPA Support"],
+        }),
+      },
+    ],
   }),
   component: ResourcesPage,
 });
