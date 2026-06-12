@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { CtaButtons } from "@/components/PagePieces";
 import { CountUp } from "@/components/CountUp";
@@ -6,11 +6,11 @@ import { Reveal } from "@/components/Reveal";
 import { FaqSection } from "@/components/FaqSection";
 import { SoftwareMarquee } from "@/components/SoftwareMarquee";
 import {
-  Calculator, FileCheck2, Receipt, Users2, Building2, LineChart,
+  Calculator, FileCheck2, Receipt, Users2, Building2,
   ArrowRight, Eraser, BarChart3, Briefcase,
   Rocket, ShoppingBag, Truck, Globe2, Megaphone, Cloud, Stethoscope,
-  Utensils, Home as HomeIcon, Store, FileText, ShieldCheck,
-  CheckCircle2, BadgePercent,
+  Utensils, Home as HomeIcon, Store, ShieldCheck,
+  CheckCircle2, BadgePercent, Globe,
 } from "lucide-react";
 import dubaiHero from "@/assets/dubai-hero.jpg";
 import logo from "@/assets/skywalker-logo.png.asset.json";
@@ -58,7 +58,7 @@ const moreServices = [
   { icon: Eraser, title: "Book Cleanup & Catch-Up", points: ["Backlog & catch-up bookkeeping", "Account reconciliations", "Record rebuild & corrections"] },
   { icon: Users2, title: "Payroll & WPS", points: ["Monthly payroll processing", "WPS-compliant disbursement", "Payslips & leave records"] },
   { icon: BarChart3, title: "Management Reporting", points: ["P&L, balance sheet & cash flow", "KPI dashboards", "Monthly performance reviews"] },
-  { icon: LineChart, title: "Virtual CFO Services", points: ["Budgeting & forecasting", "Cash flow planning", "Financial strategy"] },
+  { icon: ShieldCheck, title: "Compliance & Advisory", points: ["VAT & corporate tax advisory", "Regulatory compliance checks", "Ongoing finance guidance"] },
   { icon: Building2, title: "Business Setup Advisory", points: ["Mainland & free zone setup", "Licensing guidance", "Structuring advice"] },
   { icon: Briefcase, title: "CPA Firm Support", points: ["Offshore bookkeeping", "Cleanup projects", "Month-end close support"] },
 ];
@@ -93,38 +93,31 @@ const industries = [
 ];
 
 const caseStudies = [
-  { tag: "Featured — Cost Reduction", text: "We took on a client who was paying over AED 25,000 and reduced their cost to roughly 1/10th — without compromising on quality or scope of services.", featured: true },
-  { tag: "Ecommerce Business", text: "Reduced month-end closing time by 60% while improving VAT and corporate tax compliance.", featured: false },
+  { tag: "Featured — Fair, Work-Based Pricing", text: "We don't charge inflated flat fees. You pay only for the actual scope of work your business needs — so growing companies get premium accounting at a fraction of typical agency costs, without compromising on quality.", featured: true },
+  { tag: "Ecommerce Business", text: "Streamlined month-end closing and strengthened VAT and corporate tax compliance for faster, cleaner reporting.", featured: false },
   { tag: "Digital Marketing Agency", text: "Implemented accounting workflows and management reporting to support faster decision-making.", featured: false },
-  { tag: "UK-Based Trust Client", text: "Cleaned and reclassified over 3,000 accounting entries while maintaining bookkeeping support for 6+ years.", featured: false },
+  { tag: "UK-Based Trust Client", text: "Cleaned and reclassified a large backlog of accounting entries while providing reliable ongoing bookkeeping support for years.", featured: false },
 ];
 
 
-
-const resources = [
-  "UAE Corporate Tax Guide",
-  "VAT Filing Checklist",
-  "Accounting Health Check",
-  "Month-End Closing Checklist",
-  "SME Reporting Toolkit",
-];
 
 const faqs = [
-  { q: "What accounting services do you provide?", a: "We provide bookkeeping, accounting, VAT filing, corporate tax filing, payroll, management reporting, virtual CFO services, and accounting cleanup support." },
-  { q: "Do you support free zone companies?", a: "Yes. We support mainland and free zone businesses across various industries." },
-  { q: "Which accounting software do you support?", a: "QuickBooks, Zoho Books, Xero, Tally, Excel-based accounting systems, and custom reporting tools." },
-  { q: "Do you provide book cleanup services?", a: "Yes. We specialize in catch-up bookkeeping, cleanup projects, reconciliations, and financial record corrections." },
-  { q: "How often will I receive reports?", a: "Reporting can be monthly, quarterly, or customized based on your business requirements." },
-  { q: "Do you provide management reporting?", a: "Yes. We provide profit & loss reports, balance sheets, cash flow statements, KPI dashboards, and business performance reports." },
-  { q: "Can you help with UAE corporate tax filing?", a: "Yes. We assist with registration, assessment, filing, and compliance requirements." },
-  { q: "Do you provide support to CPA firms?", a: "Yes. We provide offshore accounting support, bookkeeping, cleanup projects, month-end close assistance, and reporting support." },
-  { q: "How do we get started?", a: "Schedule a consultation with our team. We will assess your requirements and recommend a suitable engagement model." },
+  { q: "What accounting services do you provide?", a: "We provide end-to-end bookkeeping and accounting, VAT registration and filing, corporate tax registration and filing, payroll & WPS processing, management reporting, book cleanup and catch-up accounting, business setup advisory and CPA firm support. Engagements can be monthly retainers or one-off projects depending on what your business needs." },
+  { q: "Do you support free zone and mainland companies?", a: "Yes. We support both mainland and free zone businesses across the UAE — including SRTIP, DMCC, IFZA, Meydan, RAKEZ and other free zones — and we tailor compliance and reporting to your specific licence and activity." },
+  { q: "Which accounting software do you work with?", a: "QuickBooks Online, Zoho Books, Xero, Odoo, Tally Prime and Excel-based systems, plus reporting tools like Power BI. If you already use a platform, we work inside it; if not, we'll recommend and set up the right fit for your size and budget." },
+  { q: "How does your pricing work?", a: "We charge based on the actual volume and complexity of work your business requires — not a one-size-fits-all flat fee. This keeps costs fair for small and growing businesses while still delivering premium-quality accounting and compliance. Share your requirements and we'll give you a transparent quote." },
+  { q: "Do you provide book cleanup and catch-up accounting?", a: "Yes. This is one of our specialities — backlog bookkeeping, account reconciliations, reclassification of incorrect entries and full record rebuilds to get your books accurate and audit-ready." },
+  { q: "How often will I receive reports?", a: "Most clients receive monthly management reports — profit & loss, balance sheet, cash flow and KPI summaries — but we can also deliver quarterly or custom reporting cycles based on your decision-making needs." },
+  { q: "Can you help with UAE corporate tax and VAT compliance?", a: "Yes. We handle VAT registration, periodic VAT returns, corporate tax registration, assessment and filing, and ongoing compliance aligned with FTA requirements, so you stay penalty-free and on time." },
+  { q: "Do you provide outsourced support to CPA and accounting firms?", a: "Yes. We provide white-label offshore support to CPA firms — bookkeeping, cleanup projects, month-end close assistance and reporting — so firms can scale capacity without expanding in-house headcount." },
+  { q: "Do you work with international and global clients?", a: "Yes. We support UAE-based businesses as well as international founders and firms operating in the UAE and abroad, with a delivery team across multiple jurisdictions for reliable, around-the-clock turnaround." },
+  { q: "How do we get started?", a: "Schedule a quick consultation. We'll assess your current setup and requirements, then recommend a suitable engagement model and transparent quote — usually within a few business hours." },
 ];
 
 const trustBadges = [
   "15+ Years UAE Experience",
   "VAT & Corporate Tax Specialists",
-  "Accounting & Book Cleanup Experts",
+  "Trusted by Global Clients",
   "CPA Support Services",
 ];
 
@@ -143,16 +136,16 @@ function Home() {
         <div className="container mx-auto max-w-7xl px-5 lg:px-8 relative grid lg:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-up">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-xs font-medium backdrop-blur">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-              UAE • Accounting, Tax & Financial Reporting
+              <Globe className="w-3.5 h-3.5 text-primary" />
+              UAE-based • Serving clients globally
             </div>
             <h1 className="mt-6 font-display font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight drop-shadow-lg">
-              Smart Accounting, Tax & <span className="text-primary">Financial Reporting</span> Solutions for Growing Businesses
+              Smart Accounting, Tax & <span className="text-primary">Financial Reporting</span> for Businesses Worldwide
             </h1>
             <p className="mt-6 text-lg text-white/90 max-w-xl leading-relaxed drop-shadow">
-              Helping UAE businesses, startups, free zone companies and CPA firms stay compliant, organized
-              and growth-ready through accounting, VAT filing, corporate tax, payroll, book cleanup and
-              management reporting services.
+              From our UAE base we help businesses, startups, free zone companies and CPA firms across the
+              region and around the world stay compliant, organized and growth-ready — through accounting,
+              VAT filing, corporate tax, payroll, book cleanup and management reporting.
             </p>
             <div className="mt-8">
               <CtaButtons light />
@@ -304,14 +297,15 @@ function Home() {
             <h2 className="mt-3 font-display font-bold text-3xl sm:text-4xl lg:text-5xl">A clear path from chaos to clarity</h2>
           </Reveal>
           <div className="mt-14 relative">
-            <div className="hidden lg:block absolute top-7 left-0 right-0 h-px bg-white/10" />
+            <div className="hidden lg:block absolute top-7 left-0 right-0 h-px bg-gradient-to-r from-primary/0 via-primary/40 to-primary/0" />
             <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
               {steps.map((s, i) => (
-                <Reveal key={s.label} delay={i * 120} className="relative">
-                  <div className="inline-flex w-14 h-14 items-center justify-center rounded-2xl bg-gradient-primary text-primary-foreground font-display font-bold shadow-glow">
-                    {String(i + 1).padStart(2, "0")}
+                <Reveal key={s.label} delay={i * 140} className="group relative">
+                  <div className="relative inline-flex w-14 h-14 items-center justify-center rounded-2xl bg-gradient-primary text-primary-foreground font-display font-bold shadow-glow transition-transform duration-300 group-hover:-translate-y-1.5 group-hover:scale-110">
+                    <span className="absolute inset-0 rounded-2xl bg-primary/40 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <span className="relative">{String(i + 1).padStart(2, "0")}</span>
                   </div>
-                  <h3 className="mt-5 font-display font-semibold text-lg">{s.label}</h3>
+                  <h3 className="mt-5 font-display font-semibold text-lg transition-colors duration-300 group-hover:text-primary">{s.label}</h3>
                   <p className="mt-2 text-sm text-white/60 leading-relaxed">{s.desc}</p>
                 </Reveal>
               ))}
@@ -370,30 +364,6 @@ function Home() {
 
       {/* SECTION 7 — SOFTWARE */}
       <SoftwareMarquee />
-
-      {/* SECTION 8 — FREE RESOURCES */}
-      <section className="py-24 bg-[oklch(0.15_0_0)] text-white">
-        <div className="container mx-auto max-w-7xl px-5 lg:px-8">
-          <Reveal className="max-w-2xl">
-            <span className="text-xs font-semibold tracking-[0.18em] uppercase text-primary">Resources</span>
-            <h2 className="mt-3 font-display font-bold text-3xl sm:text-4xl lg:text-5xl">Guides & official UAE links</h2>
-            <p className="mt-4 text-white/70 text-lg">Practical explainers and trusted references for UAE founders and finance teams.</p>
-          </Reveal>
-          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {resources.map((r, i) => (
-              <Reveal key={r} delay={i * 60}>
-                <Link to="/resources" className="card-hover group h-full block rounded-2xl border border-white/10 bg-white/5 p-7 backdrop-blur hover:border-primary/50">
-                  <FileText className="w-7 h-7 text-primary" />
-                  <h3 className="mt-4 font-display font-semibold text-lg">{r}</h3>
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-                    Explore <ArrowRight className="w-4 h-4" />
-                  </span>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* SECTION 9 — FAQ */}
       <FaqSection items={faqs} />
