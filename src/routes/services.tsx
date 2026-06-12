@@ -13,7 +13,7 @@ export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
       { title: "Services — Accounting, VAT, Corporate Tax & Reporting | Sky Walkers" },
-      { name: "description", content: "End-to-end financial solutions for UAE businesses: accounting, book cleanup, VAT, corporate tax, payroll, management reporting, virtual CFO and CPA firm support." },
+      { name: "description", content: "End-to-end financial solutions for UAE and global businesses: accounting, book cleanup, VAT filing, corporate tax, payroll & WPS, management reporting, compliance advisory and CPA firm support." },
       { property: "og:title", content: "Services — Sky Walkers Consultancy" },
       { property: "og:description", content: "Accounting, VAT, corporate tax, payroll, reporting and CPA support for UAE businesses." },
       { property: "og:url", content: "/services" },
