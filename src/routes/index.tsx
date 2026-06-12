@@ -6,11 +6,11 @@ import { Reveal } from "@/components/Reveal";
 import { FaqSection } from "@/components/FaqSection";
 import { SoftwareMarquee } from "@/components/SoftwareMarquee";
 import {
-  Calculator, FileCheck2, Receipt, Users2, Building2, LineChart,
+  Calculator, FileCheck2, Receipt, Users2, Building2,
   ArrowRight, Eraser, BarChart3, Briefcase,
   Rocket, ShoppingBag, Truck, Globe2, Megaphone, Cloud, Stethoscope,
-  Utensils, Home as HomeIcon, Store, FileText, ShieldCheck,
-  CheckCircle2, BadgePercent,
+  Utensils, Home as HomeIcon, Store, ShieldCheck,
+  CheckCircle2, BadgePercent, Globe,
 } from "lucide-react";
 import dubaiHero from "@/assets/dubai-hero.jpg";
 import logo from "@/assets/skywalker-logo.png.asset.json";
