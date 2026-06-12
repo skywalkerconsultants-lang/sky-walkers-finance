@@ -31,7 +31,7 @@ export const Route = createFileRoute("/services")({
           itemListElement: [
             "Accounting & Bookkeeping", "Book Cleanup & Catch-Up Accounting", "VAT Filing Services",
             "Corporate Tax Filing", "Payroll & WPS", "Management Reporting",
-            "Virtual CFO Services", "Business Setup Advisory", "CPA Firm Support",
+            "Compliance & Advisory", "Business Setup Advisory", "CPA Firm Support",
           ].map((name, i) => ({ "@type": "ListItem", position: i + 1, name })),
         }),
       },
