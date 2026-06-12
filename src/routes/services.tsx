@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { PageHero, PageCTA } from "@/components/PagePieces";
 import { Reveal } from "@/components/Reveal";
+import { FaqSection } from "@/components/FaqSection";
 import {
   Calculator, Eraser, Receipt, FileCheck2, Users2, BarChart3,
   Building2, Briefcase, ShieldCheck, ArrowRight,
