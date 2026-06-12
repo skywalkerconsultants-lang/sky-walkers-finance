@@ -1,8 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { PageHero } from "@/components/PagePieces";
-import { MessageCircle, Mail, Phone, MapPin, Clock } from "lucide-react";
+import { MessageCircle, Mail, Phone, Clock, Globe2 } from "lucide-react";
 import { useState } from "react";
+import dubaiArt from "@/assets/dubai-art.jpg";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
