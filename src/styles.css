@@ -142,6 +142,8 @@
   .marquee {
     display: flex;
     width: max-content;
+    will-change: transform;
+    backface-visibility: hidden;
     animation: marquee 35s linear infinite;
   }
   @keyframes marquee {
