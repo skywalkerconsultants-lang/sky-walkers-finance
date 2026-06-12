@@ -93,10 +93,10 @@ const industries = [
 ];
 
 const caseStudies = [
-  { tag: "Featured — Cost Reduction", text: "We took on a client who was paying over AED 25,000 and reduced their cost to roughly 1/10th — without compromising on quality or scope of services.", featured: true },
-  { tag: "Ecommerce Business", text: "Reduced month-end closing time by 60% while improving VAT and corporate tax compliance.", featured: false },
+  { tag: "Featured — Fair, Work-Based Pricing", text: "We don't charge inflated flat fees. You pay only for the actual scope of work your business needs — so growing companies get premium accounting at a fraction of typical agency costs, without compromising on quality.", featured: true },
+  { tag: "Ecommerce Business", text: "Streamlined month-end closing and strengthened VAT and corporate tax compliance for faster, cleaner reporting.", featured: false },
   { tag: "Digital Marketing Agency", text: "Implemented accounting workflows and management reporting to support faster decision-making.", featured: false },
-  { tag: "UK-Based Trust Client", text: "Cleaned and reclassified over 3,000 accounting entries while maintaining bookkeeping support for 6+ years.", featured: false },
+  { tag: "UK-Based Trust Client", text: "Cleaned and reclassified a large backlog of accounting entries while providing reliable ongoing bookkeeping support for years.", featured: false },
 ];
 
 
