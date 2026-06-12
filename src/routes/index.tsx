@@ -117,7 +117,7 @@ const faqs = [
 const trustBadges = [
   "15+ Years UAE Experience",
   "VAT & Corporate Tax Specialists",
-  "Accounting & Book Cleanup Experts",
+  "Trusted by Global Clients",
   "CPA Support Services",
 ];
 
