@@ -58,7 +58,7 @@ const moreServices = [
   { icon: Eraser, title: "Book Cleanup & Catch-Up", points: ["Backlog & catch-up bookkeeping", "Account reconciliations", "Record rebuild & corrections"] },
   { icon: Users2, title: "Payroll & WPS", points: ["Monthly payroll processing", "WPS-compliant disbursement", "Payslips & leave records"] },
   { icon: BarChart3, title: "Management Reporting", points: ["P&L, balance sheet & cash flow", "KPI dashboards", "Monthly performance reviews"] },
-  { icon: LineChart, title: "Virtual CFO Services", points: ["Budgeting & forecasting", "Cash flow planning", "Financial strategy"] },
+  { icon: ShieldCheck, title: "Compliance & Advisory", points: ["VAT & corporate tax advisory", "Regulatory compliance checks", "Ongoing finance guidance"] },
   { icon: Building2, title: "Business Setup Advisory", points: ["Mainland & free zone setup", "Licensing guidance", "Structuring advice"] },
   { icon: Briefcase, title: "CPA Firm Support", points: ["Offshore bookkeeping", "Cleanup projects", "Month-end close support"] },
 ];
