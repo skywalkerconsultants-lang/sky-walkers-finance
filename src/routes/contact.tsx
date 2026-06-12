@@ -33,8 +33,8 @@ function ContactPage() {
               { icon: MessageCircle, label: "WhatsApp", v: "+971 55 310 4053", href: "https://wa.me/971553104053" },
               { icon: Phone, label: "Phone", v: "+971 55 310 4053", href: "tel:+971553104053" },
               { icon: Mail, label: "Email", v: "skywalkerconsultants@gmail.com", href: "mailto:skywalkerconsultants@gmail.com" },
-              { icon: MapPin, label: "Office", v: "SRTIP Free Zone, Block C, Office C-170, Sharjah, UAE" },
-              { icon: Clock, label: "Hours", v: "Mon — Sat, 9:00 — 18:00" },
+              { icon: Globe2, label: "Presence", v: "UAE • India — serving clients globally" },
+              { icon: Clock, label: "Hours", v: "Mon — Sat, 9:00 — 18:00 (GST)" },
             ].map(({ icon: Icon, label, v, href }) => (
               <a key={label} href={href ?? "#"} className="flex items-start gap-4 rounded-2xl border border-border bg-card p-5 card-hover">
                 <span className="inline-flex w-11 h-11 items-center justify-center rounded-xl bg-accent text-primary shrink-0">
