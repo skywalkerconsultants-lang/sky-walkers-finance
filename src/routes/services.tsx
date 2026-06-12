@@ -77,6 +77,39 @@ function ServicesPage() {
         </div>
       </section>
 
+      {/* Dubai artistic band */}
+      <section className="pb-4">
+        <div className="container mx-auto max-w-7xl px-5 lg:px-8">
+          <div className="relative overflow-hidden rounded-3xl shadow-card">
+            <img src={dubaiArt} alt="Dubai skyline representing UAE business and finance" loading="lazy" width={1600} height={900}
+              className="w-full h-[260px] sm:h-[360px] object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.15_0_0)]/75 via-[oklch(0.15_0_0)]/35 to-transparent" />
+            <div className="absolute inset-0 flex items-center p-8 sm:p-14">
+              <div className="max-w-lg">
+                <h2 className="font-display font-bold text-2xl sm:text-4xl text-white drop-shadow-lg">
+                  Built for UAE compliance. Trusted by businesses worldwide.
+                </h2>
+                <p className="mt-3 text-white/85 text-sm sm:text-base drop-shadow">
+                  Premium accounting, tax and reporting delivered at fair, work-based pricing — from Dubai to your business, wherever it operates.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <FaqSection
+        items={[
+          { q: "What accounting and tax services do you offer in the UAE?", a: "We offer accounting & bookkeeping, book cleanup and catch-up accounting, VAT registration and filing, corporate tax registration and filing, payroll & WPS, management reporting, compliance advisory, business setup advisory and CPA firm support — for SMEs, startups, free zone companies and accounting firms." },
+          { q: "How much do your services cost?", a: "Pricing is based on the actual volume and complexity of work your business needs rather than a flat fee, which keeps it fair for small and growing businesses. Share your requirements for a transparent, no-obligation quote." },
+          { q: "Do you only work with companies based in the UAE?", a: "No. We're UAE-based and specialise in UAE compliance, but we also support international founders, SMEs and CPA firms operating across multiple jurisdictions." },
+          { q: "Which accounting software do you support?", a: "QuickBooks, Xero, Zoho Books, Odoo, Tally Prime and Excel-based systems, plus reporting tools such as Power BI. We work inside your existing platform or set up the right one for you." },
+          { q: "Can you fix messy or backlogged books?", a: "Yes. Book cleanup and catch-up accounting is a core speciality — we reconcile, reclassify and rebuild records so your books are accurate and audit-ready." },
+          { q: "How do we get started?", a: "Book a quick consultation. We'll review your current setup, recommend a suitable engagement model and send a clear quote, usually within a few business hours." },
+        ]}
+        title="Services — frequently asked questions"
+      />
+
       <PageCTA title="Let's simplify your accounting & compliance" subtitle="Professional accounting, tax, and reporting solutions designed for modern businesses." />
     </SiteLayout>
   );
