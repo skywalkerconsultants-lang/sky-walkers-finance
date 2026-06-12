@@ -47,7 +47,7 @@ const services = [
   { icon: FileCheck2, title: "Corporate Tax Filing", desc: "Registration, assessment, filing and compliance.", to: "/corporate-tax" },
   { icon: Users2, title: "Payroll & WPS", desc: "End-to-end payroll and WPS-compliant disbursement.", to: "/payroll" },
   { icon: BarChart3, title: "Management Reporting", desc: "P&L, cash flow, KPI dashboards and analysis.", to: "/management-reporting" },
-  { icon: LineChart, title: "Virtual CFO Services", desc: "Budgeting, forecasting and financial strategy.", to: "/virtual-cfo" },
+  { icon: ShieldCheck, title: "Compliance & Advisory", desc: "VAT & corporate tax advisory and ongoing regulatory compliance.", to: "/corporate-tax" },
   { icon: Building2, title: "Business Setup Advisory", desc: "Mainland and free zone formation guidance.", to: "/business-setup" },
   { icon: Briefcase, title: "CPA Firm Support", desc: "Offshore bookkeeping, cleanup and close support.", to: "/cpa-support" },
 ];
