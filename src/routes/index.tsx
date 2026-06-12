@@ -297,14 +297,15 @@ function Home() {
             <h2 className="mt-3 font-display font-bold text-3xl sm:text-4xl lg:text-5xl">A clear path from chaos to clarity</h2>
           </Reveal>
           <div className="mt-14 relative">
-            <div className="hidden lg:block absolute top-7 left-0 right-0 h-px bg-white/10" />
+            <div className="hidden lg:block absolute top-7 left-0 right-0 h-px bg-gradient-to-r from-primary/0 via-primary/40 to-primary/0" />
             <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
               {steps.map((s, i) => (
-                <Reveal key={s.label} delay={i * 120} className="relative">
-                  <div className="inline-flex w-14 h-14 items-center justify-center rounded-2xl bg-gradient-primary text-primary-foreground font-display font-bold shadow-glow">
-                    {String(i + 1).padStart(2, "0")}
+                <Reveal key={s.label} delay={i * 140} className="group relative">
+                  <div className="relative inline-flex w-14 h-14 items-center justify-center rounded-2xl bg-gradient-primary text-primary-foreground font-display font-bold shadow-glow transition-transform duration-300 group-hover:-translate-y-1.5 group-hover:scale-110">
+                    <span className="absolute inset-0 rounded-2xl bg-primary/40 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <span className="relative">{String(i + 1).padStart(2, "0")}</span>
                   </div>
-                  <h3 className="mt-5 font-display font-semibold text-lg">{s.label}</h3>
+                  <h3 className="mt-5 font-display font-semibold text-lg transition-colors duration-300 group-hover:text-primary">{s.label}</h3>
                   <p className="mt-2 text-sm text-white/60 leading-relaxed">{s.desc}</p>
                 </Reveal>
               ))}
