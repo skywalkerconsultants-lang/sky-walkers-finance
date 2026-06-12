@@ -101,24 +101,17 @@ const caseStudies = [
 
 
 
-const resources = [
-  "UAE Corporate Tax Guide",
-  "VAT Filing Checklist",
-  "Accounting Health Check",
-  "Month-End Closing Checklist",
-  "SME Reporting Toolkit",
-];
-
 const faqs = [
-  { q: "What accounting services do you provide?", a: "We provide bookkeeping, accounting, VAT filing, corporate tax filing, payroll, management reporting, virtual CFO services, and accounting cleanup support." },
-  { q: "Do you support free zone companies?", a: "Yes. We support mainland and free zone businesses across various industries." },
-  { q: "Which accounting software do you support?", a: "QuickBooks, Zoho Books, Xero, Tally, Excel-based accounting systems, and custom reporting tools." },
-  { q: "Do you provide book cleanup services?", a: "Yes. We specialize in catch-up bookkeeping, cleanup projects, reconciliations, and financial record corrections." },
-  { q: "How often will I receive reports?", a: "Reporting can be monthly, quarterly, or customized based on your business requirements." },
-  { q: "Do you provide management reporting?", a: "Yes. We provide profit & loss reports, balance sheets, cash flow statements, KPI dashboards, and business performance reports." },
-  { q: "Can you help with UAE corporate tax filing?", a: "Yes. We assist with registration, assessment, filing, and compliance requirements." },
-  { q: "Do you provide support to CPA firms?", a: "Yes. We provide offshore accounting support, bookkeeping, cleanup projects, month-end close assistance, and reporting support." },
-  { q: "How do we get started?", a: "Schedule a consultation with our team. We will assess your requirements and recommend a suitable engagement model." },
+  { q: "What accounting services do you provide?", a: "We provide end-to-end bookkeeping and accounting, VAT registration and filing, corporate tax registration and filing, payroll & WPS processing, management reporting, book cleanup and catch-up accounting, business setup advisory and CPA firm support. Engagements can be monthly retainers or one-off projects depending on what your business needs." },
+  { q: "Do you support free zone and mainland companies?", a: "Yes. We support both mainland and free zone businesses across the UAE — including SRTIP, DMCC, IFZA, Meydan, RAKEZ and other free zones — and we tailor compliance and reporting to your specific licence and activity." },
+  { q: "Which accounting software do you work with?", a: "QuickBooks Online, Zoho Books, Xero, Odoo, Tally Prime and Excel-based systems, plus reporting tools like Power BI. If you already use a platform, we work inside it; if not, we'll recommend and set up the right fit for your size and budget." },
+  { q: "How does your pricing work?", a: "We charge based on the actual volume and complexity of work your business requires — not a one-size-fits-all flat fee. This keeps costs fair for small and growing businesses while still delivering premium-quality accounting and compliance. Share your requirements and we'll give you a transparent quote." },
+  { q: "Do you provide book cleanup and catch-up accounting?", a: "Yes. This is one of our specialities — backlog bookkeeping, account reconciliations, reclassification of incorrect entries and full record rebuilds to get your books accurate and audit-ready." },
+  { q: "How often will I receive reports?", a: "Most clients receive monthly management reports — profit & loss, balance sheet, cash flow and KPI summaries — but we can also deliver quarterly or custom reporting cycles based on your decision-making needs." },
+  { q: "Can you help with UAE corporate tax and VAT compliance?", a: "Yes. We handle VAT registration, periodic VAT returns, corporate tax registration, assessment and filing, and ongoing compliance aligned with FTA requirements, so you stay penalty-free and on time." },
+  { q: "Do you provide outsourced support to CPA and accounting firms?", a: "Yes. We provide white-label offshore support to CPA firms — bookkeeping, cleanup projects, month-end close assistance and reporting — so firms can scale capacity without expanding in-house headcount." },
+  { q: "Do you work with international and global clients?", a: "Yes. We support UAE-based businesses as well as international founders and firms operating in the UAE and abroad, with a delivery team across multiple jurisdictions for reliable, around-the-clock turnaround." },
+  { q: "How do we get started?", a: "Schedule a quick consultation. We'll assess your current setup and requirements, then recommend a suitable engagement model and transparent quote — usually within a few business hours." },
 ];
 
 const trustBadges = [
