@@ -4,9 +4,10 @@ import { PageHero, PageCTA } from "@/components/PagePieces";
 import { Reveal } from "@/components/Reveal";
 import {
   Calculator, Eraser, Receipt, FileCheck2, Users2, BarChart3,
-  LineChart, Building2, Briefcase, ArrowRight,
+  Building2, Briefcase, ShieldCheck, ArrowRight,
 } from "lucide-react";
 import ogServices from "@/assets/og-services.jpg.asset.json";
+import dubaiArt from "@/assets/dubai-art.jpg";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
