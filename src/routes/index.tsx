@@ -136,16 +136,16 @@ function Home() {
         <div className="container mx-auto max-w-7xl px-5 lg:px-8 relative grid lg:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-up">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-xs font-medium backdrop-blur">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-              UAE • Accounting, Tax & Financial Reporting
+              <Globe className="w-3.5 h-3.5 text-primary" />
+              UAE-based • Serving clients globally
             </div>
             <h1 className="mt-6 font-display font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight drop-shadow-lg">
-              Smart Accounting, Tax & <span className="text-primary">Financial Reporting</span> Solutions for Growing Businesses
+              Smart Accounting, Tax & <span className="text-primary">Financial Reporting</span> for Businesses Worldwide
             </h1>
             <p className="mt-6 text-lg text-white/90 max-w-xl leading-relaxed drop-shadow">
-              Helping UAE businesses, startups, free zone companies and CPA firms stay compliant, organized
-              and growth-ready through accounting, VAT filing, corporate tax, payroll, book cleanup and
-              management reporting services.
+              From our UAE base we help businesses, startups, free zone companies and CPA firms across the
+              region and around the world stay compliant, organized and growth-ready — through accounting,
+              VAT filing, corporate tax, payroll, book cleanup and management reporting.
             </p>
             <div className="mt-8">
               <CtaButtons light />
