@@ -73,13 +73,22 @@ function ContactPage() {
         </div>
 
         <div className="container mx-auto max-w-6xl px-5 lg:px-8 mt-14">
-          <div className="rounded-3xl overflow-hidden border border-border shadow-card">
-            <iframe
-              title="Office location"
-              src="https://www.google.com/maps?q=Sharjah+Research+Technology+Innovation+Park+SRTIP&output=embed"
-              className="w-full h-[380px] border-0"
-              loading="lazy"
-            />
+          <div className="relative overflow-hidden rounded-3xl border border-border shadow-card">
+            <img src={dubaiArt} alt="Dubai skyline — Sky Walkers global presence" loading="lazy" width={1600} height={900}
+              className="w-full h-[320px] sm:h-[420px] object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.15_0_0)]/85 via-[oklch(0.15_0_0)]/30 to-transparent" />
+            <div className="absolute inset-0 flex flex-col justify-end p-8 sm:p-12">
+              <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold text-white backdrop-blur">
+                <Globe2 className="w-3.5 h-3.5 text-primary" /> Global presence
+              </span>
+              <h2 className="mt-4 font-display font-bold text-2xl sm:text-4xl text-white drop-shadow-lg max-w-xl">
+                A UAE-facing team, supported across the UAE & India
+              </h2>
+              <p className="mt-3 text-white/85 text-sm sm:text-base max-w-2xl drop-shadow">
+                Our UAE advisory team is backed by experienced accountants and qualified professionals across the
+                UAE and India — giving clients responsive, around-the-clock support wherever they operate.
+              </p>
+            </div>
           </div>
         </div>
       </section>
