@@ -13,7 +13,7 @@ import {
   CheckCircle2, BadgePercent, Globe,
 } from "lucide-react";
 import dubaiHero from "@/assets/dubai-hero.jpg";
-import worldMap from "@/assets/world-map-glow.png";
+
 import logo from "@/assets/skywalker-logo.png.asset.json";
 import ogHome from "@/assets/og-home.jpg.asset.json";
 
