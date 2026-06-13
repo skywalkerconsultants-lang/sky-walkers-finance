@@ -132,6 +132,9 @@ function Home() {
             className="w-full h-full object-cover scale-105 blur-[2px]" />
           <div className="absolute inset-0 bg-[oklch(0.15_0_0)]/55" />
           <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.12_0_0)]/85 via-[oklch(0.15_0_0)]/45 to-transparent" />
+          {/* Global reach — dotted world map glow accent */}
+          <img src={worldMap} alt="" aria-hidden width={1280} height={768}
+            className="absolute right-0 top-1/2 -translate-y-1/2 w-[80%] max-w-3xl opacity-30 mix-blend-screen animate-pulse-slow pointer-events-none" />
         </div>
         <div className="container mx-auto max-w-7xl px-5 lg:px-8 relative grid lg:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-up">
