@@ -181,7 +181,7 @@ function Home() {
       {/* SECTION 1B — ANIMATED TRUST STRIP */}
       <section className="border-y border-border bg-accent/40 py-5 overflow-hidden">
         <div className="relative flex">
-          <div className="marquee gap-10 pr-10">
+          <div className="marquee gap-10 pr-10 shrink-0 w-max">
             {[...trustStrip, ...trustStrip].map((t, i) => (
               <span key={i} className="inline-flex items-center gap-2 text-sm font-display font-semibold text-foreground/70 whitespace-nowrap">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary" />
