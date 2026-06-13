@@ -98,6 +98,7 @@ const caseStudies = [
   { tag: "Ecommerce Business", text: "Streamlined month-end closing and strengthened VAT and corporate tax compliance for faster, cleaner reporting.", featured: false },
   { tag: "Digital Marketing Agency", text: "Implemented accounting workflows and management reporting to support faster decision-making.", featured: false },
   { tag: "UK-Based Trust Client", text: "Cleaned and reclassified a large backlog of accounting entries while providing reliable ongoing bookkeeping support for years.", featured: false },
+  { tag: "Compliance Catch-Up", text: "Stepped in for clients who had started accounting on their own but were pending corporate tax and VAT compliance due to lack of knowledge — getting their registrations, filings and records fully compliant with FTA requirements.", featured: false },
 ];
 
 
