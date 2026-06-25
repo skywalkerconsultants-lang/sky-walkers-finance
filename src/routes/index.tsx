@@ -10,7 +10,7 @@ import {
   ArrowRight, Eraser, BarChart3, Briefcase,
   Rocket, ShoppingBag, Truck, Globe2, Megaphone, Cloud, Stethoscope,
   Utensils, Home as HomeIcon, Store, ShieldCheck,
-  CheckCircle2, BadgePercent, Globe,
+  CheckCircle2, BadgePercent, Globe, Quote,
 } from "lucide-react";
 import dubaiHero from "@/assets/dubai-hero.jpg";
 
