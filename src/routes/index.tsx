@@ -10,7 +10,7 @@ import {
   ArrowRight, Eraser, BarChart3, Briefcase,
   Rocket, ShoppingBag, Truck, Globe2, Megaphone, Cloud, Stethoscope,
   Utensils, Home as HomeIcon, Store, ShieldCheck,
-  CheckCircle2, BadgePercent, Globe,
+  CheckCircle2, BadgePercent, Globe, Quote,
 } from "lucide-react";
 import dubaiHero from "@/assets/dubai-hero.jpg";
 
@@ -299,12 +299,12 @@ function Home() {
             <h2 className="mt-3 font-display font-bold text-3xl sm:text-4xl lg:text-5xl">A clear path from chaos to clarity</h2>
           </Reveal>
           <div className="mt-14 relative">
-            <div className="hidden lg:block absolute top-7 left-0 right-0 h-px bg-gradient-to-r from-primary/0 via-primary/40 to-primary/0" />
+            <div className="hidden lg:block absolute top-7 left-0 right-0 h-[3px] rounded-full bg-gradient-to-r from-primary/0 via-primary to-primary/0 animate-line-grow" />
             <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
               {steps.map((s, i) => (
-                <Reveal key={s.label} delay={i * 140} className="group relative">
-                  <div className="relative inline-flex w-14 h-14 items-center justify-center rounded-2xl bg-gradient-primary text-primary-foreground font-display font-bold shadow-glow transition-transform duration-300 group-hover:-translate-y-1.5 group-hover:scale-110">
-                    <span className="absolute inset-0 rounded-2xl bg-primary/40 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <Reveal key={s.label} delay={i * 160} className="group relative">
+                  <div className="node-ring relative inline-flex w-14 h-14 items-center justify-center rounded-2xl bg-gradient-primary text-primary-foreground font-display font-bold shadow-glow animate-node-pop transition-transform duration-300 group-hover:-translate-y-1.5 group-hover:scale-110"
+                    style={{ animationDelay: `${i * 160 + 200}ms` }}>
                     <span className="relative">{String(i + 1).padStart(2, "0")}</span>
                   </div>
                   <h3 className="mt-5 font-display font-semibold text-lg transition-colors duration-300 group-hover:text-primary">{s.label}</h3>
@@ -313,6 +313,7 @@ function Home() {
               ))}
             </div>
           </div>
+
         </div>
       </section>
 
@@ -349,18 +350,34 @@ function Home() {
               at the lowest price in Dubai.
             </p>
           </Reveal>
-          <div className="mt-12 grid sm:grid-cols-2 gap-5">
-            {caseStudies.map((c, i) => (
-              <Reveal key={c.tag} delay={i * 70}>
-                <div className={`card-hover h-full rounded-2xl border p-8 shadow-card ${c.featured ? "sm:col-span-2 border-primary/40 bg-gradient-primary text-primary-foreground" : "border-border bg-card"}`}>
-                  <span className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider ${c.featured ? "bg-white/20 text-primary-foreground" : "bg-accent text-primary"}`}>
+          {/* Featured pricing banner */}
+          {caseStudies.filter((c) => c.featured).map((c) => (
+            <Reveal key={c.tag} className="mt-12">
+              <div className="relative overflow-hidden rounded-3xl border border-primary/40 bg-gradient-primary text-primary-foreground p-8 sm:p-12 shadow-glow">
+                <Quote className="absolute -top-2 -right-2 w-28 h-28 text-white/10" />
+                <span className="inline-flex items-center gap-2 rounded-full bg-white/20 px-3 py-1 text-xs font-semibold uppercase tracking-wider">
+                  {c.tag}
+                </span>
+                <p className="mt-4 text-xl sm:text-2xl font-display font-semibold leading-relaxed max-w-3xl">{c.text}</p>
+              </div>
+            </Reveal>
+          ))}
+
+          {/* Auto-scrolling testimonial cards */}
+          <div className="mt-8 relative overflow-hidden marquee-pause [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
+            <div className="marquee gap-5 pr-5">
+              {[...caseStudies.filter((c) => !c.featured), ...caseStudies.filter((c) => !c.featured)].map((c, i) => (
+                <figure key={i} className="w-[300px] sm:w-[360px] shrink-0 rounded-2xl border border-border bg-card p-7 shadow-card card-hover">
+                  <Quote className="w-8 h-8 text-primary/40" />
+                  <blockquote className="mt-3 text-base text-foreground/80 leading-relaxed">{c.text}</blockquote>
+                  <figcaption className="mt-5 inline-flex items-center gap-2 rounded-full bg-accent px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
                     {c.tag}
-                  </span>
-                  <p className={`mt-4 leading-relaxed ${c.featured ? "text-xl sm:text-2xl font-display font-semibold" : "text-lg text-foreground/80"}`}>{c.text}</p>
-                </div>
-              </Reveal>
-            ))}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
           </div>
+
         </div>
       </section>
 
