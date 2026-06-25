@@ -350,18 +350,34 @@ function Home() {
               at the lowest price in Dubai.
             </p>
           </Reveal>
-          <div className="mt-12 grid sm:grid-cols-2 gap-5">
-            {caseStudies.map((c, i) => (
-              <Reveal key={c.tag} delay={i * 70}>
-                <div className={`card-hover h-full rounded-2xl border p-8 shadow-card ${c.featured ? "sm:col-span-2 border-primary/40 bg-gradient-primary text-primary-foreground" : "border-border bg-card"}`}>
-                  <span className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider ${c.featured ? "bg-white/20 text-primary-foreground" : "bg-accent text-primary"}`}>
+          {/* Featured pricing banner */}
+          {caseStudies.filter((c) => c.featured).map((c) => (
+            <Reveal key={c.tag} className="mt-12">
+              <div className="relative overflow-hidden rounded-3xl border border-primary/40 bg-gradient-primary text-primary-foreground p-8 sm:p-12 shadow-glow">
+                <Quote className="absolute -top-2 -right-2 w-28 h-28 text-white/10" />
+                <span className="inline-flex items-center gap-2 rounded-full bg-white/20 px-3 py-1 text-xs font-semibold uppercase tracking-wider">
+                  {c.tag}
+                </span>
+                <p className="mt-4 text-xl sm:text-2xl font-display font-semibold leading-relaxed max-w-3xl">{c.text}</p>
+              </div>
+            </Reveal>
+          ))}
+
+          {/* Auto-scrolling testimonial cards */}
+          <div className="mt-8 relative overflow-hidden marquee-pause [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
+            <div className="marquee gap-5 pr-5">
+              {[...caseStudies.filter((c) => !c.featured), ...caseStudies.filter((c) => !c.featured)].map((c, i) => (
+                <figure key={i} className="w-[300px] sm:w-[360px] shrink-0 rounded-2xl border border-border bg-card p-7 shadow-card card-hover">
+                  <Quote className="w-8 h-8 text-primary/40" />
+                  <blockquote className="mt-3 text-base text-foreground/80 leading-relaxed">{c.text}</blockquote>
+                  <figcaption className="mt-5 inline-flex items-center gap-2 rounded-full bg-accent px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
                     {c.tag}
-                  </span>
-                  <p className={`mt-4 leading-relaxed ${c.featured ? "text-xl sm:text-2xl font-display font-semibold" : "text-lg text-foreground/80"}`}>{c.text}</p>
-                </div>
-              </Reveal>
-            ))}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
           </div>
+
         </div>
       </section>
 
