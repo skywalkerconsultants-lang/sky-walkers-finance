@@ -362,7 +362,8 @@ function Home() {
       </section>
 
       {/* SECTION 5 — INDUSTRIES */}
-      <section className="py-24">
+      <section className="py-24 cv-auto">
+
         <div className="container mx-auto max-w-7xl px-5 lg:px-8">
           <Reveal className="max-w-2xl">
             <span className="text-xs font-semibold tracking-[0.18em] uppercase text-primary">Industries</span>
