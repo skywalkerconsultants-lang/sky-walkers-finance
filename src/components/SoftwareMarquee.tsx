@@ -1,11 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import { Reveal } from "@/components/Reveal";
+import logoPowerpoint from "@/assets/logo-powerpoint.svg";
+import logoExcel from "@/assets/logo-excel.svg";
+import logoPowerbi from "@/assets/logo-powerbi.svg";
+import logoWps from "@/assets/logo-wps.svg";
 
-type Tool = { name: string; slug?: string; mono?: string; color: string };
+type Tool = { name: string; slug?: string; src?: string; mono?: string; color: string };
 
-// Real brand logos via Simple Icons CDN (brand-coloured SVGs).
-// Tools without a reliable Simple Icons slug use a coloured monogram. Any logo
-// that fails to load also falls back to the monogram automatically.
+// Real brand logos: Simple Icons CDN for supported brands, bundled SVGs for the
+// Microsoft/WPS marks that Simple Icons no longer hosts. Anything that fails to
+// load falls back to a coloured monogram automatically.
 const tools: Tool[] = [
   { name: "QuickBooks", slug: "quickbooks", mono: "QB", color: "#2CA01C" },
   { name: "Xero", slug: "xero", mono: "X", color: "#13B5EA" },
@@ -13,10 +17,10 @@ const tools: Tool[] = [
   { name: "Odoo", slug: "odoo", mono: "O", color: "#714B67" },
   { name: "Stripe", slug: "stripe", mono: "S", color: "#635BFF" },
   { name: "Tally Prime", mono: "T", color: "#1C75BC" },
-  { name: "Power BI", mono: "BI", color: "#E6A817" },
-  { name: "Excel", mono: "X", color: "#217346" },
-  { name: "PowerPoint", mono: "P", color: "#C43E1C" },
-  { name: "WPS Office", mono: "W", color: "#008060" },
+  { name: "Power BI", src: logoPowerbi, mono: "BI", color: "#E6A817" },
+  { name: "Excel", src: logoExcel, mono: "X", color: "#217346" },
+  { name: "PowerPoint", src: logoPowerpoint, mono: "P", color: "#C43E1C" },
+  { name: "WPS Office", src: logoWps, mono: "W", color: "#008060" },
   { name: "FTA EmaraTax", mono: "ET", color: "#C8102E" },
   { name: "Mashreq Neo", mono: "M", color: "#F47920" },
 ];
@@ -33,21 +37,22 @@ function Monogram({ mono, color }: { mono?: string; color: string }) {
   );
 }
 
-function Badge({ name, slug, mono, color }: Tool) {
+function Badge({ name, slug, src, mono, color }: Tool) {
   const [failed, setFailed] = useState(false);
-  const showImg = slug && !failed;
+  const imgSrc = src ?? (slug ? `https://cdn.simpleicons.org/${slug}/${color.replace("#", "")}` : undefined);
+  const showImg = imgSrc && !failed;
   return (
     <div className="card-hover inline-flex select-none items-center gap-3 rounded-2xl border border-border bg-card px-6 py-4 shadow-card whitespace-nowrap">
       {showImg ? (
         <img
-          src={`https://cdn.simpleicons.org/${slug}/${color.replace("#", "")}`}
+          src={imgSrc}
           alt={`${name} logo`}
           width={28}
           height={28}
           loading="lazy"
           draggable={false}
           onError={() => setFailed(true)}
-          className="w-7 h-7 shrink-0 pointer-events-none"
+          className="w-7 h-7 shrink-0 pointer-events-none object-contain"
         />
       ) : (
         <Monogram mono={mono} color={color} />
