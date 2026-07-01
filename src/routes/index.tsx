@@ -385,7 +385,7 @@ function Home() {
       </section>
 
       {/* SECTION 6 — SUCCESS STORIES */}
-      <section className="py-24 bg-accent/50">
+      <section className="py-24 bg-accent/50 cv-auto">
         <div className="container mx-auto max-w-7xl px-5 lg:px-8">
           <Reveal className="max-w-2xl">
             <span className="text-xs font-semibold tracking-[0.18em] uppercase text-primary">Real business results</span>
