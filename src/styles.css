@@ -227,6 +227,23 @@
     animation: node-ring 2.4s ease-out infinite;
   }
 
+  /* Off-screen sections render lazily to cut layout/paint cost */
+  .cv-auto { content-visibility: auto; contain-intrinsic-size: 1px 600px; }
+
+  /* Reduced motion: calm the decorative entrance + path animations, but keep
+     the trust marquee gently moving (it is a core brand element). */
+  @media (prefers-reduced-motion: reduce) {
+    .marquee { animation-duration: 60s; }
+    .marquee-reverse { animation-duration: 60s; }
+    .animate-node-pop,
+    .animate-line-grow,
+    .animate-fade-up,
+    .animate-float-soft,
+    .animate-spin-slow,
+    .animate-spin-rev { animation: none !important; }
+    .node-ring::after { animation: none !important; }
+  }
+
   .no-scrollbar::-webkit-scrollbar { display: none; }
   .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 }
