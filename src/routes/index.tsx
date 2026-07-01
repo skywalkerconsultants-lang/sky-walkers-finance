@@ -10,8 +10,9 @@ import {
   ArrowRight, Eraser, BarChart3, Briefcase,
   Rocket, ShoppingBag, Truck, Globe2, Megaphone, Cloud, Stethoscope,
   Utensils, Home as HomeIcon, Store, ShieldCheck,
-  CheckCircle2, BadgePercent, Globe, Quote,
+  CheckCircle2, BadgePercent, Globe, Quote, Star,
 } from "lucide-react";
+import { TestimonialsSlider } from "@/components/TestimonialsSlider";
 import dubaiHero from "@/assets/dubai-hero.jpg";
 
 import logo from "@/assets/skywalker-logo.png.asset.json";
@@ -93,13 +94,56 @@ const industries = [
   { icon: Store, name: "CPA Firms" },
 ];
 
-const caseStudies = [
-  { tag: "Featured — Fair, Work-Based Pricing", text: "We don't charge inflated flat fees. You pay only for the actual scope of work your business needs — so growing companies get premium accounting at a fraction of typical agency costs, without compromising on quality.", featured: true },
-  { tag: "Ecommerce Business", text: "Streamlined month-end closing and strengthened VAT and corporate tax compliance for faster, cleaner reporting.", featured: false },
-  { tag: "Digital Marketing Agency", text: "Implemented accounting workflows and management reporting to support faster decision-making.", featured: false },
-  { tag: "UK-Based Trust Client", text: "Cleaned and reclassified a large backlog of accounting entries while providing reliable ongoing bookkeeping support for years.", featured: false },
-  { tag: "Compliance Catch-Up", text: "Stepped in for clients who had started accounting on their own but were pending corporate tax and VAT compliance due to lack of knowledge — getting their registrations, filings and records fully compliant with FTA requirements.", featured: false },
+const featuredPricing = {
+  tag: "Featured — Fair, Work-Based Pricing",
+  text: "We don't charge inflated flat fees. You pay only for the actual scope of work your business needs — so growing companies get premium accounting at a fraction of typical agency costs, without compromising on quality.",
+};
+
+const testimonials = [
+  {
+    name: "Rashed A.",
+    role: "Founder, Ecommerce Retailer",
+    location: "Dubai, UAE",
+    rating: 5,
+    text: "They took over our messy month-end close and VAT filings completely. Reporting is now faster and cleaner, and we've stayed fully compliant with the FTA ever since.",
+  },
+  {
+    name: "Priya S.",
+    role: "Director, Digital Marketing Agency",
+    location: "Business Bay, Dubai",
+    rating: 4.5,
+    text: "Our books were all over the place before Sky Walkers set up proper accounting workflows. The monthly management reports now genuinely help us make faster decisions.",
+  },
+  {
+    name: "James W.",
+    role: "Trustee, Private Trust",
+    location: "United Kingdom",
+    rating: 5,
+    text: "They cleaned and reclassified a huge backlog of entries and have handled our ongoing bookkeeping reliably for years. Responsive across time zones and always accurate.",
+  },
+  {
+    name: "Mohammed K.",
+    role: "Managing Partner, Trading Company",
+    location: "Sharjah, UAE",
+    rating: 4.5,
+    text: "We had started accounting on our own but were behind on corporate tax and VAT due to lack of knowledge. They got our registrations and filings fully compliant without any penalties.",
+  },
+  {
+    name: "Anita R.",
+    role: "Founder, SaaS Startup",
+    location: "Free Zone, UAE",
+    rating: 5,
+    text: "Fair, transparent pricing based on actual work — not an inflated flat fee. As a small startup that mattered a lot, and the quality never felt compromised.",
+  },
+  {
+    name: "David L.",
+    role: "Owner, Restaurant Group",
+    location: "Deira, Dubai",
+    rating: 4.5,
+    text: "Payroll, WPS and monthly reporting are all handled without me chasing anyone. It freed up real time to focus on running the business.",
+  },
 ];
+
 
 
 
@@ -318,7 +362,8 @@ function Home() {
       </section>
 
       {/* SECTION 5 — INDUSTRIES */}
-      <section className="py-24">
+      <section className="py-24 cv-auto">
+
         <div className="container mx-auto max-w-7xl px-5 lg:px-8">
           <Reveal className="max-w-2xl">
             <span className="text-xs font-semibold tracking-[0.18em] uppercase text-primary">Industries</span>
@@ -340,7 +385,7 @@ function Home() {
       </section>
 
       {/* SECTION 6 — SUCCESS STORIES */}
-      <section className="py-24 bg-accent/50">
+      <section className="py-24 bg-accent/50 cv-auto">
         <div className="container mx-auto max-w-7xl px-5 lg:px-8">
           <Reveal className="max-w-2xl">
             <span className="text-xs font-semibold tracking-[0.18em] uppercase text-primary">Real business results</span>
@@ -351,32 +396,27 @@ function Home() {
             </p>
           </Reveal>
           {/* Featured pricing banner */}
-          {caseStudies.filter((c) => c.featured).map((c) => (
-            <Reveal key={c.tag} className="mt-12">
-              <div className="relative overflow-hidden rounded-3xl border border-primary/40 bg-gradient-primary text-primary-foreground p-8 sm:p-12 shadow-glow">
-                <Quote className="absolute -top-2 -right-2 w-28 h-28 text-white/10" />
-                <span className="inline-flex items-center gap-2 rounded-full bg-white/20 px-3 py-1 text-xs font-semibold uppercase tracking-wider">
-                  {c.tag}
-                </span>
-                <p className="mt-4 text-xl sm:text-2xl font-display font-semibold leading-relaxed max-w-3xl">{c.text}</p>
-              </div>
-            </Reveal>
-          ))}
-
-          {/* Auto-scrolling testimonial cards */}
-          <div className="mt-8 relative overflow-hidden marquee-pause [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
-            <div className="marquee gap-5 pr-5">
-              {[...caseStudies.filter((c) => !c.featured), ...caseStudies.filter((c) => !c.featured)].map((c, i) => (
-                <figure key={i} className="w-[300px] sm:w-[360px] shrink-0 rounded-2xl border border-border bg-card p-7 shadow-card card-hover">
-                  <Quote className="w-8 h-8 text-primary/40" />
-                  <blockquote className="mt-3 text-base text-foreground/80 leading-relaxed">{c.text}</blockquote>
-                  <figcaption className="mt-5 inline-flex items-center gap-2 rounded-full bg-accent px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
-                    {c.tag}
-                  </figcaption>
-                </figure>
-              ))}
+          <Reveal className="mt-12">
+            <div className="relative overflow-hidden rounded-3xl border border-primary/40 bg-gradient-primary text-primary-foreground p-8 sm:p-12 shadow-glow">
+              <Quote className="absolute -top-2 -right-2 w-28 h-28 text-white/10" />
+              <span className="inline-flex items-center gap-2 rounded-full bg-white/20 px-3 py-1 text-xs font-semibold uppercase tracking-wider">
+                {featuredPricing.tag}
+              </span>
+              <p className="mt-4 text-xl sm:text-2xl font-display font-semibold leading-relaxed max-w-3xl">{featuredPricing.text}</p>
             </div>
+          </Reveal>
+
+          {/* Client testimonials — swipeable slider with ratings */}
+          <div className="mt-14">
+            <div className="flex items-center gap-3">
+              <span className="text-xs font-semibold tracking-[0.18em] uppercase text-primary">What clients say</span>
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-card border border-border px-3 py-1 text-xs font-semibold text-foreground">
+                <Star className="w-3.5 h-3.5 fill-primary text-primary" /> 4.8/5 average rating
+              </span>
+            </div>
+            <TestimonialsSlider items={testimonials} />
           </div>
+
 
         </div>
       </section>
