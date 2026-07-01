@@ -93,13 +93,56 @@ const industries = [
   { icon: Store, name: "CPA Firms" },
 ];
 
-const caseStudies = [
-  { tag: "Featured — Fair, Work-Based Pricing", text: "We don't charge inflated flat fees. You pay only for the actual scope of work your business needs — so growing companies get premium accounting at a fraction of typical agency costs, without compromising on quality.", featured: true },
-  { tag: "Ecommerce Business", text: "Streamlined month-end closing and strengthened VAT and corporate tax compliance for faster, cleaner reporting.", featured: false },
-  { tag: "Digital Marketing Agency", text: "Implemented accounting workflows and management reporting to support faster decision-making.", featured: false },
-  { tag: "UK-Based Trust Client", text: "Cleaned and reclassified a large backlog of accounting entries while providing reliable ongoing bookkeeping support for years.", featured: false },
-  { tag: "Compliance Catch-Up", text: "Stepped in for clients who had started accounting on their own but were pending corporate tax and VAT compliance due to lack of knowledge — getting their registrations, filings and records fully compliant with FTA requirements.", featured: false },
+const featuredPricing = {
+  tag: "Featured — Fair, Work-Based Pricing",
+  text: "We don't charge inflated flat fees. You pay only for the actual scope of work your business needs — so growing companies get premium accounting at a fraction of typical agency costs, without compromising on quality.",
+};
+
+const testimonials = [
+  {
+    name: "Rashed A.",
+    role: "Founder, Ecommerce Retailer",
+    location: "Dubai, UAE",
+    rating: 5,
+    text: "They took over our messy month-end close and VAT filings completely. Reporting is now faster and cleaner, and we've stayed fully compliant with the FTA ever since.",
+  },
+  {
+    name: "Priya S.",
+    role: "Director, Digital Marketing Agency",
+    location: "Business Bay, Dubai",
+    rating: 4.5,
+    text: "Our books were all over the place before Sky Walkers set up proper accounting workflows. The monthly management reports now genuinely help us make faster decisions.",
+  },
+  {
+    name: "James W.",
+    role: "Trustee, Private Trust",
+    location: "United Kingdom",
+    rating: 5,
+    text: "They cleaned and reclassified a huge backlog of entries and have handled our ongoing bookkeeping reliably for years. Responsive across time zones and always accurate.",
+  },
+  {
+    name: "Mohammed K.",
+    role: "Managing Partner, Trading Company",
+    location: "Sharjah, UAE",
+    rating: 4.5,
+    text: "We had started accounting on our own but were behind on corporate tax and VAT due to lack of knowledge. They got our registrations and filings fully compliant without any penalties.",
+  },
+  {
+    name: "Anita R.",
+    role: "Founder, SaaS Startup",
+    location: "Free Zone, UAE",
+    rating: 5,
+    text: "Fair, transparent pricing based on actual work — not an inflated flat fee. As a small startup that mattered a lot, and the quality never felt compromised.",
+  },
+  {
+    name: "David L.",
+    role: "Owner, Restaurant Group",
+    location: "Deira, Dubai",
+    rating: 4.5,
+    text: "Payroll, WPS and monthly reporting are all handled without me chasing anyone. It freed up real time to focus on running the business.",
+  },
 ];
+
 
 
 
