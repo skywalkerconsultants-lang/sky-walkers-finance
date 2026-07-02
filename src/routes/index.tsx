@@ -30,6 +30,46 @@ export const Route = createFileRoute("/")({
       { name: "twitter:image", content: ogHome.url },
     ],
     links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Sky Walkers Consultancy",
+          description:
+            "UAE accounting, VAT, corporate tax, payroll and management reporting for growing businesses and CPA firms.",
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: "4.8",
+            bestRating: "5",
+            ratingCount: String(testimonials.length),
+          },
+          review: testimonials.map((t) => ({
+            "@type": "Review",
+            author: { "@type": "Person", name: t.name },
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: String(t.rating),
+              bestRating: "5",
+            },
+            reviewBody: t.text,
+          })),
+        }),
+      },
+    ],
   }),
   component: Home,
 });
