@@ -350,7 +350,7 @@ function Home() {
                       <h3 className="mt-5 font-display font-semibold text-xl">{title}</h3>
                       <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{desc}</p>
                       <span className="mt-auto pt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-                        Hover for details <ArrowRight className="w-4 h-4" />
+                        Learn more <ArrowRight className="w-4 h-4" />
                       </span>
                     </a>
                     {/* Back */}
