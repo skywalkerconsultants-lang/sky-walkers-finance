@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { MessageCircle, CalendarDays } from "lucide-react";
+import { trackWhatsAppClick } from "@/lib/track";
 
 const WHATSAPP = "https://wa.me/971553104053";
 
