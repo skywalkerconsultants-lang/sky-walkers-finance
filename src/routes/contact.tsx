@@ -3,6 +3,7 @@ import { useState } from "react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { PageHero } from "@/components/PagePieces";
 import { MessageCircle, Mail, Phone, Clock, Globe2, User, Copy, Check, PhoneCall } from "lucide-react";
+import { trackWhatsAppClick } from "@/lib/track";
 import dubaiArt from "@/assets/dubai-art.jpg";
 
 export const Route = createFileRoute("/contact")({
@@ -76,6 +77,7 @@ function ContactPage() {
               ))}
             </select>
             <a href={waHref} target="_blank" rel="noreferrer"
+              onClick={() => trackWhatsAppClick(service, "contact_service_picker")}
               className="mt-4 inline-flex w-full justify-center items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3.5 font-semibold shadow-glow hover:opacity-90 transition-smooth">
               <MessageCircle className="w-4 h-4" /> Message us on WhatsApp about {service}
             </a>

@@ -101,7 +101,7 @@ export function TestimonialsSlider({ items }: { items: Testimonial[] }) {
           type="button"
           onClick={() => { stop(); emblaApi?.scrollPrev(); }}
           aria-label="Previous testimonial"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border bg-card text-foreground shadow-card transition-smooth hover:border-primary hover:text-primary"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border bg-card text-foreground shadow-card transition-smooth hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
@@ -114,7 +114,7 @@ export function TestimonialsSlider({ items }: { items: Testimonial[] }) {
               onClick={() => { stop(); emblaApi?.scrollTo(i); }}
               aria-label={`Go to testimonial ${i + 1}`}
               aria-current={selected === i}
-              className={`h-2.5 rounded-full transition-all ${
+              className={`h-2.5 rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
                 selected === i ? "w-7 bg-primary" : "w-2.5 bg-muted-foreground/30 hover:bg-muted-foreground/60"
               }`}
             />
@@ -125,7 +125,7 @@ export function TestimonialsSlider({ items }: { items: Testimonial[] }) {
           type="button"
           onClick={() => { stop(); emblaApi?.scrollNext(); }}
           aria-label="Next testimonial"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border bg-card text-foreground shadow-card transition-smooth hover:border-primary hover:text-primary"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border bg-card text-foreground shadow-card transition-smooth hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
           <ChevronRight className="w-5 h-5" />
         </button>

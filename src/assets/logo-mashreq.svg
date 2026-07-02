@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Mashreq Neo logo">
+  <defs>
+    <linearGradient id="msq" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ff7a00"/><stop offset="1" stop-color="#ff4d00"/>
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="10" fill="url(#msq)"/>
+  <path d="M24 9c6 5 9 9.5 9 15.5C33 32 28.5 37 24 39c-4.5-2-9-7-9-14.5C15 18.5 18 14 24 9z" fill="#fff"/>
+  <path d="M24 15c3 2.6 4.6 5.3 4.6 8.8 0 4-2.2 6.9-4.6 8.2-2.4-1.3-4.6-4.2-4.6-8.2 0-3.5 1.6-6.2 4.6-8.8z" fill="#ff5e00"/>
+</svg>

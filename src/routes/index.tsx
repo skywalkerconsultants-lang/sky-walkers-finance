@@ -30,6 +30,46 @@ export const Route = createFileRoute("/")({
       { name: "twitter:image", content: ogHome.url },
     ],
     links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Sky Walkers Consultancy",
+          description:
+            "UAE accounting, VAT, corporate tax, payroll and management reporting for growing businesses and CPA firms.",
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: "4.8",
+            bestRating: "5",
+            ratingCount: String(testimonials.length),
+          },
+          review: testimonials.map((t) => ({
+            "@type": "Review",
+            author: { "@type": "Person", name: t.name },
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: String(t.rating),
+              bestRating: "5",
+            },
+            reviewBody: t.text,
+          })),
+        }),
+      },
+    ],
   }),
   component: Home,
 });
@@ -45,14 +85,17 @@ const mainServices = [
   {
     icon: Calculator, title: "Accounting & Bookkeeping", to: "/accounting",
     desc: "Accurate daily books, reconciliations and clear monthly reporting — the foundation of every compliant business.",
+    info: "Cloud bookkeeping, bank & ledger reconciliations, AP/AR management and month-end close — delivered on QuickBooks, Zoho, Xero or Tally.",
   },
   {
     icon: Receipt, title: "VAT Filing Services", to: "/vat",
     desc: "Registration, periodic returns and full UAE VAT compliance handled end-to-end, on time, every time.",
+    info: "FTA VAT registration, quarterly return preparation, input/output reconciliation and audit-ready records — zero missed deadlines.",
   },
   {
     icon: FileCheck2, title: "Corporate Tax Filing", to: "/corporate-tax",
     desc: "Registration, assessment, filing and ongoing corporate tax compliance aligned with FTA requirements.",
+    info: "Corporate tax registration, taxable-income assessment, small-business relief guidance and timely filing aligned with UAE law.",
   },
 ];
 
@@ -290,23 +333,46 @@ function Home() {
             </p>
           </Reveal>
 
-          {/* 3 MAIN SERVICES */}
+          {/* 3 MAIN SERVICES — flip cards */}
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {mainServices.map(({ icon: Icon, title, desc, to }, i) => (
+            {mainServices.map(({ icon: Icon, title, desc, to, info }, i) => (
               <Reveal key={title} delay={i * 50}>
-                <a href={to} className="card-hover group h-full block rounded-2xl border border-border bg-card p-8 shadow-card">
-                  <div className="inline-flex w-12 h-12 items-center justify-center rounded-xl bg-accent text-primary group-hover:bg-gradient-primary group-hover:text-primary-foreground transition-smooth">
-                    <Icon className="w-6 h-6" />
+                <div className="flip h-full min-h-[280px]">
+                  <div className="flip-inner h-full min-h-[280px]">
+                    {/* Front */}
+                    <a
+                      href={to}
+                      className="flip-face flex flex-col rounded-2xl border border-border bg-card p-8 shadow-card"
+                    >
+                      <div className="inline-flex w-12 h-12 items-center justify-center rounded-xl bg-accent text-primary">
+                        <Icon className="w-6 h-6" />
+                      </div>
+                      <h3 className="mt-5 font-display font-semibold text-xl">{title}</h3>
+                      <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{desc}</p>
+                      <span className="mt-auto pt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
+                        Learn more <ArrowRight className="w-4 h-4" />
+                      </span>
+                    </a>
+                    {/* Back */}
+                    <a
+                      href={to}
+                      className="flip-face flip-back flex flex-col rounded-2xl border border-primary/40 bg-gradient-primary text-primary-foreground p-8 shadow-glow"
+                    >
+                      <div className="inline-flex w-12 h-12 items-center justify-center rounded-xl bg-white/20">
+                        <Icon className="w-6 h-6" />
+                      </div>
+                      <h3 className="mt-5 font-display font-semibold text-xl">{title}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-primary-foreground/90">{info}</p>
+                      <span className="mt-auto pt-5 inline-flex items-center gap-1.5 text-sm font-semibold">
+                        Learn more <ArrowRight className="w-4 h-4" />
+                      </span>
+                    </a>
                   </div>
-                  <h3 className="mt-5 font-display font-semibold text-xl">{title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{desc}</p>
-                  <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-                    Learn More <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </span>
-                </a>
+                </div>
               </Reveal>
             ))}
           </div>
+
 
           {/* MORE SERVICES — with data instead of "learn more" */}
           <Reveal className="mt-16 mb-6">

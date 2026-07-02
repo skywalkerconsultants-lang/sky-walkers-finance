@@ -229,11 +229,30 @@
   /* Off-screen sections render lazily to cut layout/paint cost */
   .cv-auto { content-visibility: auto; contain-intrinsic-size: 1px 600px; }
 
+  /* 3D flip cards (services) */
+  .flip { perspective: 1200px; }
+  .flip-inner {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .flip:hover .flip-inner,
+  .flip:focus-within .flip-inner,
+  .flip.is-flipped .flip-inner { transform: rotateY(180deg); }
+  .flip-face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  .flip-back { transform: rotateY(180deg); }
+
   /* Reduced motion: calm the decorative entrance + path animations, but keep
-     the trust marquee gently moving (it is a core brand element). */
+     the trust marquee moving at a visible speed (it is a core brand element). */
   @media (prefers-reduced-motion: reduce) {
-    .marquee { animation-duration: 60s; }
-    .marquee-reverse { animation-duration: 60s; }
+    .marquee { animation-duration: 42s; }
+    .marquee-reverse { animation-duration: 42s; }
+    .flip-inner { transition: none; }
     .animate-node-pop,
     .animate-line-grow,
     .animate-fade-up,

@@ -4,6 +4,9 @@ import logoPowerpoint from "@/assets/logo-powerpoint.svg";
 import logoExcel from "@/assets/logo-excel.svg";
 import logoPowerbi from "@/assets/logo-powerbi.svg";
 import logoWps from "@/assets/logo-wps.svg";
+import logoTally from "@/assets/logo-tally.svg";
+import logoMashreq from "@/assets/logo-mashreq.svg";
+import logoEmaratax from "@/assets/logo-emaratax.svg";
 
 type Tool = { name: string; slug?: string; src?: string; mono?: string; color: string };
 
@@ -16,13 +19,13 @@ const tools: Tool[] = [
   { name: "Zoho Books", slug: "zoho", mono: "Z", color: "#E42527" },
   { name: "Odoo", slug: "odoo", mono: "O", color: "#714B67" },
   { name: "Stripe", slug: "stripe", mono: "S", color: "#635BFF" },
-  { name: "Tally Prime", mono: "T", color: "#1C75BC" },
+  { name: "Tally Prime", src: logoTally, mono: "T", color: "#1C75BC" },
   { name: "Power BI", src: logoPowerbi, mono: "BI", color: "#E6A817" },
   { name: "Excel", src: logoExcel, mono: "X", color: "#217346" },
   { name: "PowerPoint", src: logoPowerpoint, mono: "P", color: "#C43E1C" },
   { name: "WPS Office", src: logoWps, mono: "W", color: "#008060" },
-  { name: "FTA EmaraTax", mono: "ET", color: "#C8102E" },
-  { name: "Mashreq Neo", mono: "M", color: "#F47920" },
+  { name: "FTA EmaraTax", src: logoEmaratax, mono: "ET", color: "#0B7D63" },
+  { name: "Mashreq Neo", src: logoMashreq, mono: "M", color: "#FF5E00" },
 ];
 
 function Monogram({ mono, color }: { mono?: string; color: string }) {
