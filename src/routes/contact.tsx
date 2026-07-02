@@ -3,6 +3,7 @@ import { useState } from "react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { PageHero } from "@/components/PagePieces";
 import { MessageCircle, Mail, Phone, Clock, Globe2, User, Copy, Check, PhoneCall } from "lucide-react";
+import { trackWhatsAppClick } from "@/lib/track";
 import dubaiArt from "@/assets/dubai-art.jpg";
 
 export const Route = createFileRoute("/contact")({
