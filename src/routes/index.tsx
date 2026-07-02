@@ -293,23 +293,46 @@ function Home() {
             </p>
           </Reveal>
 
-          {/* 3 MAIN SERVICES */}
+          {/* 3 MAIN SERVICES — flip cards */}
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {mainServices.map(({ icon: Icon, title, desc, to }, i) => (
+            {mainServices.map(({ icon: Icon, title, desc, to, info }, i) => (
               <Reveal key={title} delay={i * 50}>
-                <a href={to} className="card-hover group h-full block rounded-2xl border border-border bg-card p-8 shadow-card">
-                  <div className="inline-flex w-12 h-12 items-center justify-center rounded-xl bg-accent text-primary group-hover:bg-gradient-primary group-hover:text-primary-foreground transition-smooth">
-                    <Icon className="w-6 h-6" />
+                <div className="flip h-full min-h-[280px]">
+                  <div className="flip-inner h-full min-h-[280px]">
+                    {/* Front */}
+                    <a
+                      href={to}
+                      className="flip-face flex flex-col rounded-2xl border border-border bg-card p-8 shadow-card"
+                    >
+                      <div className="inline-flex w-12 h-12 items-center justify-center rounded-xl bg-accent text-primary">
+                        <Icon className="w-6 h-6" />
+                      </div>
+                      <h3 className="mt-5 font-display font-semibold text-xl">{title}</h3>
+                      <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{desc}</p>
+                      <span className="mt-auto pt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
+                        Hover for details <ArrowRight className="w-4 h-4" />
+                      </span>
+                    </a>
+                    {/* Back */}
+                    <a
+                      href={to}
+                      className="flip-face flip-back flex flex-col rounded-2xl border border-primary/40 bg-gradient-primary text-primary-foreground p-8 shadow-glow"
+                    >
+                      <div className="inline-flex w-12 h-12 items-center justify-center rounded-xl bg-white/20">
+                        <Icon className="w-6 h-6" />
+                      </div>
+                      <h3 className="mt-5 font-display font-semibold text-xl">{title}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-primary-foreground/90">{info}</p>
+                      <span className="mt-auto pt-5 inline-flex items-center gap-1.5 text-sm font-semibold">
+                        Learn more <ArrowRight className="w-4 h-4" />
+                      </span>
+                    </a>
                   </div>
-                  <h3 className="mt-5 font-display font-semibold text-xl">{title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{desc}</p>
-                  <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-                    Learn More <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </span>
-                </a>
+                </div>
               </Reveal>
             ))}
           </div>
+
 
           {/* MORE SERVICES — with data instead of "learn more" */}
           <Reveal className="mt-16 mb-6">
