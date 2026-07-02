@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Tally Prime logo">
+  <defs>
+    <linearGradient id="tly" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2a72c4"/><stop offset="1" stop-color="#12539b"/>
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="10" fill="url(#tly)"/>
+  <path d="M13 15h22v5h-8.3v17h-5.4V20H13z" fill="#fff"/>
+  <circle cx="34" cy="33" r="3.4" fill="#ffb400"/>
+</svg>
