@@ -54,6 +54,12 @@ export const Route = createFileRoute("/accounting")({
         { step: "04", label: "Monthly Reporting" },
         { step: "05", label: "Continuous Support" },
       ]}
+      faqs={[
+        { q: "Do you work inside my existing accounting software?", a: "Yes. We work directly in QuickBooks, Zoho Books, Xero, Tally Prime or Excel-based systems. If you don't have one yet, we recommend and set up the right platform for your size and budget." },
+        { q: "How quickly can you take over our bookkeeping?", a: "Most onboarding is completed within a few business days after we review your current books and access. Backlogs are handled in parallel through our catch-up service." },
+        { q: "Will I get monthly financial statements?", a: "Yes — profit & loss, balance sheet and cash flow, plus a short summary of what the numbers mean, delivered every month." },
+        { q: "Is my financial data kept confidential and secure?", a: "Absolutely. Access is restricted to your engagement team, and we work within your platform's secure environment with role-based permissions." },
+      ]}
     />
   ),
 });
