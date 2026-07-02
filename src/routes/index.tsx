@@ -45,14 +45,17 @@ const mainServices = [
   {
     icon: Calculator, title: "Accounting & Bookkeeping", to: "/accounting",
     desc: "Accurate daily books, reconciliations and clear monthly reporting — the foundation of every compliant business.",
+    info: "Cloud bookkeeping, bank & ledger reconciliations, AP/AR management and month-end close — delivered on QuickBooks, Zoho, Xero or Tally.",
   },
   {
     icon: Receipt, title: "VAT Filing Services", to: "/vat",
     desc: "Registration, periodic returns and full UAE VAT compliance handled end-to-end, on time, every time.",
+    info: "FTA VAT registration, quarterly return preparation, input/output reconciliation and audit-ready records — zero missed deadlines.",
   },
   {
     icon: FileCheck2, title: "Corporate Tax Filing", to: "/corporate-tax",
     desc: "Registration, assessment, filing and ongoing corporate tax compliance aligned with FTA requirements.",
+    info: "Corporate tax registration, taxable-income assessment, small-business relief guidance and timely filing aligned with UAE law.",
   },
 ];
 
