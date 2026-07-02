@@ -4,6 +4,9 @@ import logoPowerpoint from "@/assets/logo-powerpoint.svg";
 import logoExcel from "@/assets/logo-excel.svg";
 import logoPowerbi from "@/assets/logo-powerbi.svg";
 import logoWps from "@/assets/logo-wps.svg";
+import logoTally from "@/assets/logo-tally.svg";
+import logoMashreq from "@/assets/logo-mashreq.svg";
+import logoEmaratax from "@/assets/logo-emaratax.svg";
 
 type Tool = { name: string; slug?: string; src?: string; mono?: string; color: string };
 
