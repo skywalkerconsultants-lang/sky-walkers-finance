@@ -1,3 +1,5 @@
+import { trackWhatsAppClick } from "@/lib/track";
+
 export function WhatsAppFAB() {
   return (
     <a
@@ -5,6 +7,7 @@ export function WhatsAppFAB() {
       target="_blank"
       rel="noreferrer"
       aria-label="Chat on WhatsApp"
+      onClick={() => trackWhatsAppClick("General enquiry", "floating_button")}
       className="fixed bottom-6 right-6 z-40 inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-glow hover:scale-110 transition-smooth"
     >
       <svg viewBox="0 0 24 24" className="w-7 h-7" fill="currentColor" aria-hidden="true">
