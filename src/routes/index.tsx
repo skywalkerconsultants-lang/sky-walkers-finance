@@ -226,7 +226,7 @@ function Home() {
           <div className="animate-fade-up">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-xs font-medium backdrop-blur">
               <Globe className="w-3.5 h-3.5 text-primary" />
-              UAE-based • Serving clients globally
+              Serving clients globally
             </div>
             <h1 className="mt-6 font-display font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight drop-shadow-lg">
               Smart Accounting, Tax & <span className="text-primary">Financial Reporting</span> for Businesses Worldwide
