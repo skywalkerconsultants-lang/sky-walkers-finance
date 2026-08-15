@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/skywalker-logo.png.asset.json";
+import logo from "@/assets/skywalker-logo.png";
 
 const navItems = [
   { to: "/", label: "Home" },
@@ -35,7 +35,7 @@ export function SiteHeader() {
       <div className="container mx-auto max-w-7xl px-5 lg:px-8 h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center">
           <span className={`inline-flex items-center rounded-xl px-2.5 py-1.5 transition-smooth ${scrolled ? "" : "bg-white shadow-glow"}`}>
-            <img src={logo.url} alt="Sky Walkers Consultancy" width={660} height={372}
+            <img src={logo} alt="Sky Walkers Consultancy" width={660} height={372}
               className="h-12 lg:h-14 w-auto" />
           </span>
         </Link>

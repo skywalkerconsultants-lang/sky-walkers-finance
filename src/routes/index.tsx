@@ -15,8 +15,7 @@ import {
 import { TestimonialsSlider } from "@/components/TestimonialsSlider";
 import dubaiHero from "@/assets/dubai-hero.jpg";
 
-import logo from "@/assets/skywalker-logo.png.asset.json";
-import ogHome from "@/assets/og-home.jpg.asset.json";
+import logo from "@/assets/skywalker-logo.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -26,8 +25,8 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Sky Walkers Consultancy — UAE Accounting & Tax Partner" },
       { property: "og:description", content: "Smart accounting, tax and financial reporting solutions for growing UAE businesses and CPA firms." },
       { property: "og:url", content: "/" },
-      { property: "og:image", content: ogHome.url },
-      { name: "twitter:image", content: ogHome.url },
+      { property: "og:image", content: "/og/og-home.jpg" },
+      { name: "twitter:image", content: "/og/og-home.jpg" },
     ],
     links: [{ rel: "canonical", href: "/" }],
     scripts: [
@@ -259,7 +258,7 @@ function Home() {
             <div className="absolute w-72 h-72 bg-gradient-primary opacity-30 blur-3xl rounded-full" />
             {/* Floating frosted-glass logo card */}
             <div className="relative animate-float-soft w-full max-w-sm rounded-3xl bg-white/95 backdrop-blur border border-white/40 shadow-glow p-10 sm:p-12">
-              <img src={logo.url} alt="Sky Walkers Consultancy logo" width={660} height={372}
+              <img src={logo} alt="Sky Walkers Consultancy logo" width={660} height={372}
                 className="w-full h-auto" />
             </div>
           </div>

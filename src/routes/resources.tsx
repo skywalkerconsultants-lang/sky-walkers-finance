@@ -3,7 +3,6 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { PageHero, PageCTA } from "@/components/PagePieces";
 import { Reveal } from "@/components/Reveal";
 import { ExternalLink } from "lucide-react";
-import ogResources from "@/assets/og-resources.jpg.asset.json";
 
 export const Route = createFileRoute("/resources")({
   head: () => ({
@@ -13,8 +12,8 @@ export const Route = createFileRoute("/resources")({
       { property: "og:title", content: "Resources Hub — Sky Walkers Consultancy" },
       { property: "og:description", content: "Guides, checklists and official UAE links on tax, VAT, accounting and reporting." },
       { property: "og:url", content: "/resources" },
-      { property: "og:image", content: ogResources.url },
-      { name: "twitter:image", content: ogResources.url },
+      { property: "og:image", content: "/og/og-resources.jpg" },
+      { name: "twitter:image", content: "/og/og-resources.jpg" },
     ],
     links: [{ rel: "canonical", href: "/resources" }],
     scripts: [
