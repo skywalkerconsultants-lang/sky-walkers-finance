@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import logo from "@/assets/skywalker-logo.png.asset.json";
+import logo from "@/assets/skywalker-logo.png";
 
 export function SiteFooter() {
   return (
@@ -7,7 +7,7 @@ export function SiteFooter() {
       <div className="container mx-auto max-w-7xl px-5 lg:px-8 py-16 grid grid-cols-1 md:grid-cols-4 gap-10">
         <div className="md:col-span-2">
           <div className="inline-flex items-center rounded-xl bg-white px-4 py-3 shadow-glow">
-            <img src={logo.url} alt="Sky Walkers Consultancy" width={660} height={372} loading="lazy"
+            <img src={logo} alt="Sky Walkers Consultancy" width={660} height={372} loading="lazy"
               className="h-14 w-auto" />
           </div>
           <p className="mt-4 max-w-md text-sm text-white/60 leading-relaxed">

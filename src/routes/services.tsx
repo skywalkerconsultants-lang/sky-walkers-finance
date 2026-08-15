@@ -7,7 +7,6 @@ import {
   Calculator, Eraser, Receipt, FileCheck2, Users2, BarChart3,
   Building2, Briefcase, ShieldCheck, ArrowRight,
 } from "lucide-react";
-import ogServices from "@/assets/og-services.jpg.asset.json";
 import dubaiArt from "@/assets/dubai-art.jpg";
 
 export const Route = createFileRoute("/services")({
@@ -18,8 +17,8 @@ export const Route = createFileRoute("/services")({
       { property: "og:title", content: "Services — Sky Walkers Consultancy" },
       { property: "og:description", content: "Accounting, VAT, corporate tax, payroll, reporting and CPA support for UAE businesses." },
       { property: "og:url", content: "/services" },
-      { property: "og:image", content: ogServices.url },
-      { name: "twitter:image", content: ogServices.url },
+      { property: "og:image", content: "/og/og-services.jpg" },
+      { name: "twitter:image", content: "/og/og-services.jpg" },
     ],
     links: [{ rel: "canonical", href: "/services" }],
     scripts: [
